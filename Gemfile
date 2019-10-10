@@ -61,7 +61,7 @@ end
 # gem 'tether-rails'
 # gem 'bootstrap'
 # gem 'bootstrap', '~> 4.3.1'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 # gem 'jquery-ui-rails'
