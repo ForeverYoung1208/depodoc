@@ -5,11 +5,98 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= tag :meta, name: :psj, action: action_name, controller: controller_name %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+   
   </head>
 
   <body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    
+        <!-- http://v4-alpha.getbootstrap.com/components/navbar/#how-it-works  -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <%= fa_link_to('-file-invoice-dollar', sessions_path, class: 'navbar-brand') {'Restman - Менеджмент залишків'} %>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="navbar-nav mr-auto">
+
+
+          <%= mainmenu_dropdown( {
+            current: request.path, 
+            menuitems: {
+                          "на вчора (#{DateTime.yesterday.strftime("%d.%m.%Y")})" => [by_date_movements_path(date: DateTime.yesterday.strftime("%Y-%m-%d")), @current_user.can_view_movements?],
+                          'інші дати' => [index_formatted_days_path, @current_user.can_view_movements?]
+                        }
+          }) {"Рух"}  %>
+
+
+          <!-- < mainmenu_item( {
+              current: request.path, 
+              menuitem: movements_path, 
+              active: @current_user.can_view_movements?
+          }) {'Рух'} > -->
+
+          <%= mainmenu_item( {
+              current: request.path, 
+              menuitem: accounts_path, 
+              active: @current_user.can_view_accounts?
+          }) {'Рахунки-Залишки по банках'} %>
+
+          <%= mainmenu_dropdown( {
+            current: request.path, 
+            menuitems: {
+                          'Конвертація виписки Ощадбанка' => [converter_oshchad_path, @current_user.can_use_converters?],
+                        }
+          }) {"Сервіс"}  %>
+
+
+          <%= mainmenu_dropdown( {
+            current: request.path, 
+            menuitems: {
+                          'Дати' => [days_path, @current_user.can_view_days?],
+                          'Компанії' => [companies_path, @current_user.can_view_companies?],
+                          'Користувачі' => [users_path, @current_user.can_view_users?],
+                          'Ролі' => [roles_path, @current_user.can_view_roles?],
+                          'Групи' => [groups_path, @current_user.can_view_groups?],
+                          'Банки' => [banks_path, @current_user.can_view_banks?],
+                          'Валюти' => [currencies_path, @current_user.can_view_currencies?],
+                          'Типи рахунків' => [acc_types_path, @current_user.can_view_acc_types?],
+                          'Рахунки' => [accounts_path, @current_user.can_view_accounts?],
+                          'Категорії' => [movement_groups_path, @current_user.can_view_movement_groups?],
+
+                        }
+          }) {"Налаштування"}  %>
+
+        </ul>
+
+        
+        
+      <div id="user-zone">
+        <%= render 'users/user_zone' %>  
+      </div>
+        
+      </div><!-- /.navbar-collapse -->
+
+      
+
+      
+    </nav>
+
+
+    
+    <% flash.each do |name, msg| %>
+      <%= content_tag :pre, msg, id: "flash#{name}", class: "notice" %>
+    <% end %>  
+
+    
     <%= yield %>
+
+
   </body>
 </html>
