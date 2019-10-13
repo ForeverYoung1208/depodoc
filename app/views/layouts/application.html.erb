@@ -21,55 +21,30 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <%= fa_link_to('-file-invoice-dollar', sessions_path, class: 'navbar-brand') {'Restman - Менеджмент залишків'} %>
+      <%= fa_link_to('-file-invoice-dollar', sessions_path, class: 'navbar-brand') {'Depodoc - Депозитарні документи'} %>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent" >
         <ul class="navbar-nav mr-auto">
 
 
-          <%= mainmenu_dropdown( {
-            current: request.path, 
-            menuitems: {
-                          "на вчора (#{DateTime.yesterday.strftime("%d.%m.%Y")})" => [by_date_movements_path(date: DateTime.yesterday.strftime("%Y-%m-%d")), @current_user.can_view_movements?],
-                          'інші дати' => [index_formatted_days_path, @current_user.can_view_movements?]
-                        }
-          }) {"Рух"}  %>
-
-
-          <!-- < mainmenu_item( {
+          <%= mainmenu_item( {
               current: request.path, 
-              menuitem: movements_path, 
-              active: @current_user.can_view_movements?
-          }) {'Рух'} > -->
+              menuitem: root_url, 
+              active: true
+          }) {'Документи'} %>
 
           <%= mainmenu_item( {
               current: request.path, 
-              menuitem: accounts_path, 
-              active: @current_user.can_view_accounts?
-          }) {'Рахунки-Залишки по банках'} %>
-
-          <%= mainmenu_dropdown( {
-            current: request.path, 
-            menuitems: {
-                          'Конвертація виписки Ощадбанка' => [converter_oshchad_path, @current_user.can_use_converters?],
-                        }
-          }) {"Сервіс"}  %>
+              menuitem: root_url, 
+              active: true
+          }) {'Операції'} %>
 
 
           <%= mainmenu_dropdown( {
             current: request.path, 
             menuitems: {
-                          'Дати' => [days_path, @current_user.can_view_days?],
-                          'Компанії' => [companies_path, @current_user.can_view_companies?],
-                          'Користувачі' => [users_path, @current_user.can_view_users?],
-                          'Ролі' => [roles_path, @current_user.can_view_roles?],
-                          'Групи' => [groups_path, @current_user.can_view_groups?],
-                          'Банки' => [banks_path, @current_user.can_view_banks?],
-                          'Валюти' => [currencies_path, @current_user.can_view_currencies?],
-                          'Типи рахунків' => [acc_types_path, @current_user.can_view_acc_types?],
-                          'Рахунки' => [accounts_path, @current_user.can_view_accounts?],
-                          'Категорії' => [movement_groups_path, @current_user.can_view_movement_groups?],
-
+                          'Користувачі' => [root_url,true],
+                          'Ролі' => [root_url,true],
                         }
           }) {"Налаштування"}  %>
 
