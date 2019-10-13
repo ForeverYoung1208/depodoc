@@ -1,4 +1,4 @@
-default: &default
+primary_default: &primary_default
   adapter: mysql2
   encoding: utf8
   reconnect: false
@@ -6,23 +6,9 @@ default: &default
   pool: 5
   username: root_depodoc
   password: '120880'
+  migrations_paths: 'db/migrate'
 
-
-development:
-  <<: *default
-  database: depodoc_development
-
-test:
-  <<: *default
-  database: depodoc_test
-
-production:
-  <<: *default
-  database: depodoc_production
-
-
-
-users_default: &users_default
+tm2_default: &tm2_default
   adapter: mysql2
   encoding: utf8
   reconnect: false
@@ -30,16 +16,39 @@ users_default: &users_default
   pool: 5
   username: root_tm2
   password: '120880'
+  migrations_paths: 'db/tm2_migrate'
 
 
-users_development: 
-  <<: *users_default
-  database: <%= ENV["USERS_DEVELOPMENT_DATABASE"] %>
 
-users_test:
-  <<: *users_default  
-  database: tm2t_test
+development:
+  primary:
+    <<: *primary_default
+    database: depodoc_development
+  tm2_db:
+    <<: *tm2_default
+    # database: tm2t_development
+    database: <%= ENV["USERS_DEVELOPMENT_DATABASE"] %>
 
-users_production:
-  <<: *users_default  
-  database: <%= ENV["USERS_PRODUCTION_DATABASE"] %>
+production:
+  primary:
+    <<: *primary_default
+    database: depodoc_production
+  tm2_db:
+    <<: *tm2_default
+    # database: tm2t_production
+    database: <%= ENV["USERS_PRODUCTION_DATABASE"] %>
+
+
+test:
+  primary:
+    <<: *primary_default
+    database: depodoc_test
+  tm2_db:
+    <<: *tm2_default
+    database: tm2t_test
+
+
+#  database: tm2t_production
+#  host: 192.168.20.33
+#  port: 3306
+
