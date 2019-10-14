@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def update_roles
-    if @current_user.can_update_roles?
+    if @current_user.can_edit_roles?
       all_roles = {}
       params["_json"].each do |u|
         u[:roles].each do |r|

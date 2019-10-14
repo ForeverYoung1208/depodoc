@@ -39,7 +39,8 @@ class Users {
 		this.save = this.save.bind(this);
 		this.data = [];
 		this.element_id = id;
-		this.constructor.instances<<this;
+		// this.constructor.instances<<this;
+		this.instances<<this;
 		this.allRoles = allRoles;
 	}
 

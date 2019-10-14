@@ -43,7 +43,7 @@
           <%= mainmenu_dropdown( {
             current: request.path, 
             menuitems: {
-                          'Користувачі' => [root_url,true],
+                          'Користувачі' => [users_path, @current_user.can_view_users?],
                           'Ролі' => [roles_path, @current_user.can_edit_roles?],
                         }
           }) {"Налаштування"}  %>

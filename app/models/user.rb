@@ -71,16 +71,21 @@ class User < Tm2Record
   end
 
 #================
+  def can_view_users?
+    # true
+    is_admin
+  end
 
   def can_edit_users?
-    true
-    # is_admin
+    # true
+    is_admin
   end  
 
   def can_edit_roles?
-    true
-    # is_admin
+    # true
+    is_admin
   end
+
 
 #  def can_close_day?
 #    is_admin or roles.pluck(:name).includes('can_close_day')

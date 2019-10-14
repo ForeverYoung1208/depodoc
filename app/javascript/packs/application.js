@@ -11,6 +11,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("jquery")
+require('webpack-jquery-ui')
+require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
 require("popper.js")
 require("bootstrap")
 
