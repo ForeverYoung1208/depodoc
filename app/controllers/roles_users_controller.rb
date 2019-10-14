@@ -4,7 +4,7 @@ class RolesUsersController < ApplicationController
   # GET /roles_users
   # GET /roles_users.json
   def index
-    @roles_users = RolesUser.all
+    @roles_user = RolesUser.all
   end
 
   # GET /roles_users/1

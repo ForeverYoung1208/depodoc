@@ -8,20 +8,20 @@
     <%= tag :meta, name: :psj, action: action_name, controller: controller_name %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- %= favicon_link_tag 'favicon.ico' %-->
+    <%= favicon_link_tag 'favicon.ico' %>
    
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light">
     
         <!-- http://v4-alpha.getbootstrap.com/components/navbar/#how-it-works  -->
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <%= fa_link_to('-file-invoice-dollar', sessions_path, class: 'navbar-brand') {'Depodoc - Депозитарні документи'} %>
+      <%= fa_link_to('-file-contract', sessions_path, class: 'navbar-brand') {'Depodoc - Депозитарні документи'} %>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent" >
         <ul class="navbar-nav mr-auto">
@@ -44,7 +44,7 @@
             current: request.path, 
             menuitems: {
                           'Користувачі' => [root_url,true],
-                          'Ролі' => [root_url,true],
+                          'Ролі' => [roles_path, @current_user.can_edit_roles?],
                         }
           }) {"Налаштування"}  %>
 
@@ -53,7 +53,7 @@
         
         
       <div id="user-zone">
-        <!-- %= render 'users/user_zone' %-- >  
+        <%= render 'users/user_zone' %>  
       </div>
         
       </div><!-- /.navbar-collapse -->

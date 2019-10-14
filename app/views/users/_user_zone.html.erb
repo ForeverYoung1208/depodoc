@@ -1,0 +1,7 @@
+<% if @current_user %>
+	<%= @current_user.name%> 
+
+	<div id="exit">
+		<%= link_to 'вийти', session_path(id: 'exit'), method: :delete %>
+	</div>
+<% end %>

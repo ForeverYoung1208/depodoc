@@ -2,16 +2,22 @@
 
 <h1>Roles Users</h1>
 
-<table>
+<table class="table-bordered">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Role</th>
+      <th>User</th>
+      <th>Deleted at</th>
+      <th colspan="3">Management</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @roles_users.each do |roles_user| %>
+    <% @roles_user.each do |roles_user| %>
       <tr>
+        <td><%= roles_user.role.name %></td>
+        <td><%= roles_user.user.name %></td>
+        <td><%= roles_user.deleted_at %></td>
         <td><%= link_to 'Show', roles_user %></td>
         <td><%= link_to 'Edit', edit_roles_user_path(roles_user) %></td>
         <td><%= link_to 'Destroy', roles_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

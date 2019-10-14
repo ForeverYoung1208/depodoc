@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_214113) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "roles_users", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "roles_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "role_id"
     t.bigint "user_id"
     t.datetime "deleted_at"

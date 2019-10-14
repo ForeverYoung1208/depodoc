@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
+	resources :sessions
   resources :roles_users
   resources :roles
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-	resources :sessions
+
+  resources :users, only: [:index, :show] do
+    get 'current', to: 'users#current', on: :collection
+  end
+  post 'users', to: "users#update_roles", as: "update_roles"
+
   
 	root :to => "sessions#new"
 
