@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :documents
+  resources :faces
 	resources :sessions
   resources :roles_users
   resources :roles

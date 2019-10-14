@@ -6,8 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= tag :meta, name: :psj, action: action_name, controller: controller_name %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all'%>
+    <%= javascript_pack_tag 'application' %>
     <%= favicon_link_tag 'favicon.ico' %>
    
   </head>
@@ -29,7 +29,7 @@
 
           <%= mainmenu_item( {
               current: request.path, 
-              menuitem: root_url, 
+              menuitem: documents_path, 
               active: true
           }) {'Документи'} %>
 
