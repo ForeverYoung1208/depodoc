@@ -1,0 +1,2 @@
+class Docstate < State
+end

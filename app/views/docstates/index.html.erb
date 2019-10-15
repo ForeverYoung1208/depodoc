@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Docstates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Possible changes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @docstates.each do |docstate| %>
+      <tr>
+        <td><%= docstate.name %></td>
+        <td><%= docstate.possible_changes %></td>
+        <td><%= link_to 'Show', docstate %></td>
+        <td><%= link_to 'Edit', edit_docstate_path(docstate) %></td>
+        <td><%= link_to 'Destroy', docstate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Docstate', new_docstate_path %>

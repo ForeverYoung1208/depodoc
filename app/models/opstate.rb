@@ -1,0 +1,2 @@
+class Opstate < State
+end

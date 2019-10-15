@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_02_24_210945) do
 
-  create_table "aautos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "aautos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "autodesc"
     t.string "autonumber"
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.string "contact"
   end
 
-  create_table "actions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "actions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "kind"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "aorders", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "aorders", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "onname"
     t.time "ftime"
     t.time "totime"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.integer "department_id"
   end
 
-  create_table "callists", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "callists", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.text "data", size: :medium
     t.string "filename"
     t.integer "loadedby_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.index ["loadedby_id"], name: "index_callists_on_loadedby_id"
   end
 
-  create_table "calls", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "calls", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "tel_number"
     t.string "datetime"
     t.string "calltype"
@@ -74,14 +74,14 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.index ["user_id"], name: "index_calls_on_user_id"
   end
 
-  create_table "companies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "companies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.boolean "istabelling"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "departments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "departments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.integer "company_id"
     t.datetime "created_at", null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.index ["company_id"], name: "index_departments_on_company_id"
   end
 
-  create_table "odates", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "odates", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.date "thedate"
     t.boolean "isclosed"
     t.datetime "created_at", null: false
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.boolean "was_used", default: false
   end
 
-  create_table "onlineautos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "onlineautos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "aauto_id"
     t.integer "odate_id"
     t.datetime "created_at", null: false
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.boolean "onduty"
   end
 
-  create_table "sessions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "sessions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "session_id", null: false
     t.text "data"
     t.datetime "created_at", null: false
@@ -114,20 +114,20 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "telnumbers", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "telnumbers", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "tel_number"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "userlevels", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "userlevels", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "email"
     t.string "name"
     t.string "password_hash"
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_210945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
-    t.boolean "is_ip_controlled", default: true
+    t.boolean "is_ip_controlled", default: false
     t.string "ip_address"
     t.datetime "deleted_at"
   end

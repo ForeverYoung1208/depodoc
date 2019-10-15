@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @opstate.name %>
+</p>
+
+<p>
+  <strong>Possible changes:</strong>
+  <%= @opstate.possible_changes %>
+</p>
+
+<%= link_to 'Edit', edit_opstate_path(@opstate) %> |
+<%= link_to 'Back', opstates_path %>

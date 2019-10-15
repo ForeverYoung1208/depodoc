@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :opstates
+  resources :docstates
   resources :documents
   resources :faces
 	resources :sessions
