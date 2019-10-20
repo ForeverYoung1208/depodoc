@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @opstate_change.operation_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @opstate_change.date %>
+</p>
+
+<p>
+  <strong>From state:</strong>
+  <%= @opstate_change.from_state_id %>
+</p>
+
+<p>
+  <strong>To state:</strong>
+  <%= @opstate_change.to_state_id %>
+</p>
+
+<p>
+  <strong>User references:</strong>
+  <%= @opstate_change.user_references %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @opstate_change.note %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @opstate_change.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_opstate_change_path(@opstate_change) %> |
+<%= link_to 'Back', opstate_changes_path %>

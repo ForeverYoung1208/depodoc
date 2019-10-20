@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doctypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctypes.each do |doctype| %>
+      <tr>
+        <td><%= doctype.name %></td>
+        <td><%= link_to 'Show', doctype %></td>
+        <td><%= link_to 'Edit', edit_doctype_path(doctype) %></td>
+        <td><%= link_to 'Destroy', doctype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doctype', new_doctype_path %>

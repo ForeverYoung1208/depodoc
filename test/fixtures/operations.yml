@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  side1: one
+  side2: one
+  company: one
+  manager: one
+  optype: one
+  note: MyText
+
+two:
+  side1: two
+  side2: two
+  company: two
+  manager: two
+  optype: two
+  note: MyText

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :opstate_changes
+  resources :operations
+  resources :companies
+  resources :optypes
+  resources :doctypes
+  resources :docstate_changes
   resources :opstates
   resources :docstates
   resources :documents

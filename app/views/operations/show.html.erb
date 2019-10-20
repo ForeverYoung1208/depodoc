@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Side1:</strong>
+  <%= @operation.side1_id %>
+</p>
+
+<p>
+  <strong>Side2:</strong>
+  <%= @operation.side2_id %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @operation.company_id %>
+</p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @operation.manager_id %>
+</p>
+
+<p>
+  <strong>Optype:</strong>
+  <%= @operation.optype_id %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @operation.note %>
+</p>
+
+<%= link_to 'Edit', edit_operation_path(@operation) %> |
+<%= link_to 'Back', operations_path %>

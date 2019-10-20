@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @docstate_change.document_id %>
+</p>
+
+<p>
+  <strong>From state:</strong>
+  <%= @docstate_change.from_state_id %>
+</p>
+
+<p>
+  <strong>To state:</strong>
+  <%= @docstate_change.to_state_id %>
+</p>
+
+<p>
+  <strong>User references:</strong>
+  <%= @docstate_change.user_references %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @docstate_change.note %>
+</p>
+
+<%= link_to 'Edit', edit_docstate_change_path(@docstate_change) %> |
+<%= link_to 'Back', docstate_changes_path %>

@@ -1,0 +1,2 @@
+class Optype < ApplicationRecord
+end

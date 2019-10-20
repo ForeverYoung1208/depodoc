@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  operation: one
+  date: 2019-10-20
+  from_state: one
+  to_state: one
+  user_references: MyString
+  note: MyText
+  deleted_at: 2019-10-20 22:45:02
+
+two:
+  operation: two
+  date: 2019-10-20
+  from_state: two
+  to_state: two
+  user_references: MyString
+  note: MyText
+  deleted_at: 2019-10-20 22:45:02

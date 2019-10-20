@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  document: one
+  from_state: one
+  to_state: one
+  user_references: MyString
+  note: MyText
+
+two:
+  document: two
+  from_state: two
+  to_state: two
+  user_references: MyString
+  note: MyText

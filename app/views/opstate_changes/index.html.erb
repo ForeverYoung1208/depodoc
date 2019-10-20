@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Opstate Changes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operation</th>
+      <th>Date</th>
+      <th>From state</th>
+      <th>To state</th>
+      <th>User references</th>
+      <th>Note</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opstate_changes.each do |opstate_change| %>
+      <tr>
+        <td><%= opstate_change.operation_id %></td>
+        <td><%= opstate_change.date %></td>
+        <td><%= opstate_change.from_state_id %></td>
+        <td><%= opstate_change.to_state_id %></td>
+        <td><%= opstate_change.user_references %></td>
+        <td><%= opstate_change.note %></td>
+        <td><%= opstate_change.deleted_at %></td>
+        <td><%= link_to 'Show', opstate_change %></td>
+        <td><%= link_to 'Edit', edit_opstate_change_path(opstate_change) %></td>
+        <td><%= link_to 'Destroy', opstate_change, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opstate Change', new_opstate_change_path %>
