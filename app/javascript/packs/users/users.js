@@ -1,5 +1,9 @@
 
 /*
+
+converted from coffeescript, so messy code.
+btw, my first experience on javascripe oop, so double messy code )))
+
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
  * DS102: Remove unnecessary code created because of implicit returns
@@ -84,37 +88,31 @@ class Users {
 	}
 	drawRolesforUsers(users){
 		let res = '';
+		let elRole;
 		const self = this;
-		return (() => {
-			const result = [];
-			for (let user of Array.from(users)) {
-				res = '';
-				if (user.roles) {
-					for (let role_id of Array.from(user.roles)) { 
-						res += '<span class="badge badge-pill badge-info" data-rid="'+
-							role_id+
-							'" data-uid="'+
-							user.id+'" >'+
-							role_id+' ' +
-							this.allRoles.getRoleById(role_id).name; 
+		for (let user of users) {
+			$(this.element_id).find("[data-uid='" + user.id + "']").empty()
+			res = '';
+			elRole = null;
+			if (user.roles) {
+				for (let role_id of user.roles) { 
+					res += '<span class="badge badge-pill badge-info" data-rid="'+role_id
+					res += '" data-uid="'+	user.id+'" >'; 
 
-						res += ' <i class="fa fa-2x fa-trash deletable"></i>';
-						res += '</span>';
-					}					
-				}
-				$(this.element_id).find("[data-uid='" + user.id + "']").html( res );
-				$('.draggable').draggable({
-					helper: 'clone'
-				});
-				result.push($(".deletable").on('click', function(e){
-					const uid = parseInt( $(this).parent().attr('data-uid') );
-					const rid = parseInt( $(this).parent().attr('data-rid') );
-					self.deleteRoleFromUser(rid, uid);
-					return self.drawRolesforUsers( [self.getById(uid)]);
-				}));
+					res += role_id+' ' +	this.allRoles.getRoleById(role_id).name + ' <i class="fa fa-2x fa-trash deletable"></i>';
+					res += '</span>';
+					elRole = $(res)
+					elRole.on('click', function(e){
+
+						console.log(role_id)
+						console.log(user.id)
+						self.deleteRoleFromUser(role_id, user.id);
+						self.drawRolesforUsers( [self.getById(user.id)]);
+					});		
+				}					
+				$(this.element_id).find("[data-uid='" + user.id + "']").append(elRole);
 			}
-			return result;
-		})();
+		}
 	}
 	deleteRoleFromUser(role_id, user_id) {
 		const user = this.getById(user_id);
