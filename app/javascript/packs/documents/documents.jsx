@@ -1,20 +1,32 @@
-import React, { useContext, useReducer } from 'react'
-import {AppContext} from './documents_app'
+import React, { useContext, useReducer, useEffect } from 'react'
+import {DocumentsContext} from './documents_app'
 
 
+function Document(props){
+	console.log(props)
+	return props.document.name
+}
 
 export default function Documents() {
-	const appReducer = useContext(AppContext);
-	const [state, dispatch] = useReducer(appReducer, {})
+	const docReducer = useContext(DocumentsContext);
+	const [state, dispatch] = useReducer(docReducer, {documents: []})
 	
-// ???????? doesn't work !!!!!!!!??????	
-
-	dispatch({type: 'get_documents'})
-
-//
-
 
   return(
-  	<div>Documents will be here: {state.documents[0].name}</div>
+  	<React.Fragment>
+
+	  	
+	  	{  state.documents.map((document)=> 
+	  		<Document 
+	  			key={document.id} 
+	  			document={document}
+	  		/> 
+	  	)}
+	  	
+	  	
+	  	
+	  	<button onClick = {()=>dispatch({type: 'reset', payload:'some reset value'})}>reset</button>
+	  	<button onClick = {()=>dispatch({type: 'get_documents'})}>get_documents</button>
+	  </React.Fragment>
   )
 }

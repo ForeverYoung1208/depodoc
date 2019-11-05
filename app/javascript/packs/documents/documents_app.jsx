@@ -2,41 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Documents from './documents'
+import {documentsReducer} from './documents_reducer'
 
-const fake_documents = [
-	{
-		id:1,
-		name: 'fdoc1'
-	},
-	{
-		id:2,
-		name: 'fdoc2'
-	},
-]
-
-export const AppContext = React.createContext();
-
-function appReducer(state, action) {
-  switch (action.type) {
-    case 'get_documents':
-      return { documents: fake_documents };
-
-    case 'increment':
-      return { count: state.count + 1};
-    case 'decrement':
-      return {count: state.count - 1};
-    default:
-      throw new Error('unknown reducer action');
-  }
-}
-
-
+export const DocumentsContext = React.createContext();
 
 
 const DocumentsApp = props => (
-	<AppContext.Provider value = {appReducer}>
+	<DocumentsContext.Provider value = {documentsReducer}>
 	  <Documents></Documents>
-  </AppContext.Provider>
+  </DocumentsContext.Provider>
 )
 
 
