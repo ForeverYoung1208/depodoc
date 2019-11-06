@@ -23,3 +23,4 @@ roles = [
 # IMPORTANT! first admin names will be binded to 'admin' and 'siafin2010@gmail.com'
 admin_users_ids = User.where("name = 'admin' or name = 'siafin2010@gmail.com'").pluck(:id)
 roles[0].bind_to_users!(admin_users_ids)
+

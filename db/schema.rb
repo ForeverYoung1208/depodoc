@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_194502) do
+ActiveRecord::Schema.define(version: 2019_11_06_210047) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_194502) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "doctype_id", null: false
+    t.datetime "deleted_at"
     t.index ["doctype_id"], name: "index_documents_on_doctype_id"
     t.index ["face_id"], name: "index_documents_on_face_id"
   end

@@ -7,7 +7,7 @@ class User < Tm2Record
   after_initialize :get_roles_names
 
   has_and_belongs_to_many :roles
-  has_many :movements, class_name: :Movement, foreign_key: :last_editor_id
+  has_many :docstate_changes
 
   mattr_accessor :current_user
 
@@ -84,6 +84,10 @@ class User < Tm2Record
   def can_edit_roles?
     # true
     is_admin
+  end
+
+  def can_edit_faces?
+    true
   end
 
 
