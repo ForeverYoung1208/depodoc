@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :logs
   resources :opstate_changes
   resources :operations
   resources :companies

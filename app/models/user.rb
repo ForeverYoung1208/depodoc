@@ -8,6 +8,9 @@ class User < Tm2Record
 
   has_and_belongs_to_many :roles
   has_many :docstate_changes
+  has_many :opstate_changes
+  has_many :logs
+  has_many :operations
 
   mattr_accessor :current_user
 

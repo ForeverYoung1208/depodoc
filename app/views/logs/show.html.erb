@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @log.user_id %>
+</p>
+
+<p>
+  <strong>Changed model:</strong>
+  <%= @log.changed_model %>
+</p>
+
+<p>
+  <strong>Changed:</strong>
+  <%= @log.changed_id %>
+</p>
+
+<p>
+  <strong>From value:</strong>
+  <%= @log.from_value %>
+</p>
+
+<p>
+  <strong>To value:</strong>
+  <%= @log.to_value %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @log.note %>
+</p>
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>
