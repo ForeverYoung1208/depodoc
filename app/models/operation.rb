@@ -1,6 +1,6 @@
 class Operation < ApplicationRecord
 
-	default_scope { where("operation.deleted_at IS NULL")}
+	# default_scope { where("deleted_at IS NULL")}
 
   belongs_to :side1, class_name: :Face
   belongs_to :side2, class_name: :Face

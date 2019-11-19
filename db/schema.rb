@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_191339) do
+ActiveRecord::Schema.define(version: 2019_11_17_191958) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -70,12 +70,24 @@ ActiveRecord::Schema.define(version: 2019_11_17_191339) do
     t.datetime "deleted_at"
   end
 
+  create_table "logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "changed_model"
+    t.bigint "changed_id"
+    t.string "from_value"
+    t.string "to_value"
+    t.text "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_logs_on_user_id"
+  end
+
   create_table "operations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "side1", null: false
-    t.bigint "side2", null: false
-    t.bigint "company", null: false
-    t.bigint "manager", null: false
-    t.bigint "optype", null: false
+    t.bigint "side1_id", null: false
+    t.bigint "side2_id", null: false
+    t.bigint "company_id", null: false
+    t.bigint "manager_id", null: false
+    t.bigint "optype_id", null: false
     t.text "note"
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
