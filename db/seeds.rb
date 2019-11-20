@@ -26,6 +26,9 @@ roles[0].bind_to_users!(admin_users_ids)
 
 
 # below assignments only for testing
+
+current_user = User.where("name = 'admin'").first
+
 faces=[
 	Face.where(id: 1).first_or_create({
     code: 'face0001',
@@ -115,7 +118,7 @@ operations=[
 		side1: faces[0],
 		side2: faces[1],
 		company: companies[0],
-		manager: User.where("name = 'admin'").first,
+		manager: current_user,
 		optype: optypes[0]
 	}),
 	Operation.where(id: 2).first_or_create({
@@ -130,16 +133,70 @@ operations=[
 
 opstate_changes=[
 	OpstateChange.where(id: 1).first_or_create({
-		operation: operations[0],
 		from_state: opstates[0],
-		to_state: opstates[1]
+		to_state: opstates[1],
+		operation: operations[0],
+		user: current_user,
+		note: 'opstate_change1 note',
+		date: '2019-11-20'
 	}),
 	OpstateChange.where(id: 2).first_or_create({
-		operation: operations[0],
 		from_state: opstates[1],
-		to_state: opstates[2]
+		to_state: opstates[2],
+		operation: operations[0],
+		user: current_user,
+		note: 'opstate_change2 note',
+		date: '2019-11-20'
+	}),
+	OpstateChange.where(id: 2).first_or_create({
+		from_state: opstates[2],
+		to_state: opstates[3],
+		operation: operations[0],
+		user: current_user,
+		note: 'opstate_change3 note',
+		date: '2019-11-21'
 	})	
 ]
 
+documents=[
+	Document.where(id: 1).first_or_create({
+		name: 'document1_name',
+		face: faces[0],
+		note: 'document1_note',
+		doctype: doctypes[0]
+	}),
+	Document.where(id: 2).first_or_create({
+		name: 'document2_name',
+		face: faces[1],
+		note: 'document2_note',
+		doctype: doctypes[1]
+	}),	
+]
 
+docstate_changes=[
+	DocstateChange.where(id: 1).first_or_create({
+		from_state: docstates[0],
+		to_state: docstates[1],
+		document: documents[0],
+		user: current_user,
+		note: 'docstate_change1 note',
+		date: '2019-11-20'
+	}),
+	DocstateChange.where(id: 2).first_or_create({
+		from_state: docstates[1],
+		to_state: docstates[2],
+		document: documents[1],
+		user: current_user,
+		note: 'docstate_change2 note',
+		date: '2019-11-20'
+	}),
+	DocstateChange.where(id: 3).first_or_create({
+		from_state: docstates[2],
+		to_state: docstates[3],
+		document: documents[1],
+		user: current_user,
+		note: 'docstate_change3 note',
+		date: '2019-11-21'
+	})	
 
+]
