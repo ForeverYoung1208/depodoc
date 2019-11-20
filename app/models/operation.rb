@@ -7,6 +7,6 @@ class Operation < ApplicationRecord
   belongs_to :company
   belongs_to :manager, class_name: :User
   belongs_to :optype
-
+	has_and_belongs_to_many :documents
 
 end

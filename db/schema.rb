@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 2019_11_17_191958) do
     t.index ["face_id"], name: "index_documents_on_face_id"
   end
 
+  create_table "documents_operations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "operation_id", null: false
+    t.bigint "document_id", null: false
+    t.index ["document_id"], name: "index_documents_operations_on_document_id"
+    t.index ["operation_id"], name: "index_documents_operations_on_operation_id"
+  end
+
   create_table "faces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
     t.string "name"
@@ -92,13 +99,6 @@ ActiveRecord::Schema.define(version: 2019_11_17_191958) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "operations_documents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "operation_id", null: false
-    t.bigint "document_id", null: false
-    t.index ["document_id"], name: "index_operations_documents_on_document_id"
-    t.index ["operation_id"], name: "index_operations_documents_on_operation_id"
   end
 
   create_table "opstate_changes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -152,8 +152,8 @@ ActiveRecord::Schema.define(version: 2019_11_17_191958) do
   add_foreign_key "docstate_changes", "documents"
   add_foreign_key "documents", "doctypes"
   add_foreign_key "documents", "faces"
-  add_foreign_key "operations_documents", "documents"
-  add_foreign_key "operations_documents", "operations"
+  add_foreign_key "documents_operations", "documents"
+  add_foreign_key "documents_operations", "operations"
   add_foreign_key "opstate_changes", "operations"
   add_foreign_key "opstate_changes", "opstates", column: "from_state_id"
   add_foreign_key "opstate_changes", "opstates", column: "to_state_id"

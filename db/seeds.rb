@@ -9,6 +9,7 @@
 
 require 'date'
 
+
 # IMPORTANT! frontend relys on role.id
 roles = [
 	Role.where(id: 1).first_or_create(
@@ -113,6 +114,8 @@ docstates=[
 	})
 ]
 
+
+
 operations=[
 	Operation.where(id: 1).first_or_create({
 		side1: faces[0],
@@ -179,24 +182,24 @@ docstate_changes=[
 		to_state: docstates[1],
 		document: documents[0],
 		user: current_user,
-		note: 'docstate_change1 note',
-		date: '2019-11-20'
+		note: 'docstate_change1 note'
 	}),
 	DocstateChange.where(id: 2).first_or_create({
 		from_state: docstates[1],
 		to_state: docstates[2],
 		document: documents[1],
 		user: current_user,
-		note: 'docstate_change2 note',
-		date: '2019-11-20'
+		note: 'docstate_change2 note'
 	}),
 	DocstateChange.where(id: 3).first_or_create({
 		from_state: docstates[2],
 		to_state: docstates[3],
 		document: documents[1],
 		user: current_user,
-		note: 'docstate_change3 note',
-		date: '2019-11-21'
+		note: 'docstate_change3 note'
+		
 	})	
-
 ]
+
+operations[0].documents<<documents
+operations[0].save!

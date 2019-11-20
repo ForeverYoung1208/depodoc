@@ -5,4 +5,5 @@ class Document < ApplicationRecord
   belongs_to :face
   belongs_to :doctype
   has_many :docstate_changes
+  has_and_belongs_to_many :operations
 end
