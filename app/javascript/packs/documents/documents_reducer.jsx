@@ -1,14 +1,14 @@
 const fake_documents = [
 	{
-		id:1,
-		name: 'fdoc1'
+		"id":1,
+		"name":"document1_name",
+		"face_id":1,
+		"note":"document1_note",
+		"created_at":"2019-11-20T20:08:14.538Z",
+		"updated_at":"2019-11-20T20:08:14.538Z"
 	},
-	{
-		id:2,
-		name: 'fdoc2'
-	},
+	{"id":2,"name":"document2_name","face_id":2,"note":"document2_note","created_at":"2019-11-20T20:08:14.545Z","updated_at":"2019-11-20T20:08:14.545Z"}
 ]
-
 
 export function documentsReducer(state, action) {
   switch (action.type) {
@@ -17,6 +17,6 @@ export function documentsReducer(state, action) {
     case 'reset':
     	return {documents: [{id:1, name: action.payload}]};
     default:
-      throw new Error('unknown reducer action');
+      throw new Error('unknown documents reducer action');
   }
 }
