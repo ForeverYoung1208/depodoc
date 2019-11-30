@@ -1,5 +1,6 @@
 import React, { useContext, useReducer, useEffect } from 'react'
 import {DocumentsContext} from './documents_app'
+import classes from './documents.module.css'
 
 
 function Document(props){
@@ -22,6 +23,7 @@ export default function Documents() {
 	
   return(
   	<React.Fragment>
+  		<h1 className={classes['test-styles']}> test styles</h1>
   		<div className="col-sm-12 p-2">
 				<table className="table table-sm">
 					<thead className="thead-light">
