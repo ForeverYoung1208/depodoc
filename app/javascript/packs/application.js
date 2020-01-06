@@ -21,6 +21,6 @@ require('@fortawesome/fontawesome-free/js/solid')
 require('@fortawesome/fontawesome-free/js/regular')
 require('@fortawesome/fontawesome-free/js/brands')
 
-import './css/app_css'
+import '../common-css/app_css'
 
-require("./users/users")
+require("../users/users")
