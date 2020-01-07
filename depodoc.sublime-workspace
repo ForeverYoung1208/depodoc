@@ -1,0 +1,901 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"va",
+				"value"
+			],
+			[
+				"doc",
+				"documents"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"operta",
+				"operations"
+			],
+			[
+				"accou",
+				"account_id"
+			],
+			[
+				"de",
+				"document"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"D",
+				"Document"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"get",
+				"get_documents"
+			],
+			[
+				"ue",
+				"useReducer"
+			],
+			[
+				"el",
+				"elRole"
+			],
+			[
+				"Documen",
+				"DocumentsApp"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"por",
+				"production"
+			],
+			[
+				"app",
+				"application"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"mo",
+				"movements"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"c",
+				"currency"
+			],
+			[
+				"in",
+				"interest"
+			],
+			[
+				"ban",
+				"bankDeposits"
+			],
+			[
+				"ass",
+				"allDeposits"
+			],
+			[
+				"co",
+				"companyDeposits"
+			],
+			[
+				"depo",
+				"deposit"
+			],
+			[
+				"name",
+				"name_ukr"
+			],
+			[
+				"all",
+				"allDeposits"
+			],
+			[
+				"cu",
+				"currDeposit"
+			],
+			[
+				"All",
+				"allDeposits"
+			],
+			[
+				"sa",
+				"saldo_on_date"
+			],
+			[
+				"acco",
+				"accounts"
+			],
+			[
+				"margi",
+				"margin-left\tproperty"
+			],
+			[
+				"pa",
+				"padding-left\tproperty"
+			],
+			[
+				"ali",
+				"align-self\tproperty"
+			],
+			[
+				"bo",
+				"border-width\tproperty"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"acc",
+				"accounts"
+			],
+			[
+				"ger",
+				"getBanksFromAccounts"
+			],
+			[
+				"com",
+				"company"
+			],
+			[
+				"compa",
+				"company"
+			],
+			[
+				"b",
+				"banks"
+			],
+			[
+				"ac",
+				"accsList"
+			],
+			[
+				"U",
+				"USD"
+			],
+			[
+				"rcc",
+				"rcc\tReact: class component"
+			],
+			[
+				"ad",
+				"admin_users_ids"
+			],
+			[
+				"role",
+				"roles"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/javascript/packs/App/App_documents.jsx",
+			"settings":
+			{
+				"buffer_size": 476,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/javascript/packs/App/store/reducers/rootReducer.jsx",
+			"settings":
+			{
+				"buffer_size": 82,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/javascript/packs/App/store/reducers/documents.jsx",
+			"settings":
+			{
+				"buffer_size": 646,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: lis",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 199.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/fy/ror/depodoc",
+		"/home/fy/ror/depodoc/app",
+		"/home/fy/ror/depodoc/app/javascript",
+		"/home/fy/ror/depodoc/app/javascript/packs",
+		"/home/fy/ror/depodoc/app/javascript/packs/App",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/pages",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/store",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/store/reducers",
+		"/home/fy/ror/depodoc/app/views",
+		"/home/fy/ror/depodoc/app/views/layouts"
+	],
+	"file_history":
+	[
+		"/home/fy/ror/depodoc/app/javascript/packs/App/store/reducers/rootReducer.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/documents.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/libs.js",
+		"/home/fy/ror/depodoc/app/views/documents/index.html.erb",
+		"/home/fy/ror/depodoc/app/views/layouts/login.html.erb",
+		"/home/fy/ror/depodoc/app/views/layouts/_head.html.erb",
+		"/home/fy/ror/depodoc/app/views/layouts/application.html.erb",
+		"/home/fy/ror/depodoc/app/models/role.rb",
+		"/home/fy/ror/depodoc/config/webpacker.yml",
+		"/home/fy/Завантажене/udemy-react-vladilen-with-hooks/src/hoc/Layout/Layout.js",
+		"/home/fy/Завантажене/udemy-react-vladilen-with-hooks/src/hoc/Layout/Layout.css",
+		"/home/fy/ror/restman/app/javascript/packs/Day/day.jsx",
+		"/home/fy/ror/restman/app/assets/stylesheets/movements.scss",
+		"/home/fy/ror/restman/app/assets/stylesheets/days.scss",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/companiesMovements.jsx",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/EditMovement/editMovement.jsx",
+		"/home/fy/ror/restman/app/controllers/concerns/auth.rb",
+		"/home/fy/ror/restman/app/controllers/sessions_controller.rb",
+		"/home/fy/ror/restman/config/webpacker.yml",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/ExportToXls/exportToXls.jsx",
+		"/home/fy/ror/restman/app/views/layouts/application.html.erb",
+		"/home/fy/ror/restman/app/controllers/users_controller.rb",
+		"/home/fy/ror/restman/app/views/users/current.json.jbuilder",
+		"/home/fy/ror/restman/app/javascript/packs/movements_main.jsx",
+		"/home/fy/ror/restman/app/javascript/packs/i-services.jsx",
+		"/home/fy/ror/restman/app/views/users/_user_zone.html.erb",
+		"/home/fy/ror/restman/app/views/sessions/new.html.erb",
+		"/home/fy/lessons/react-theory/node_modules/@jest/core/build/ReporterDispatcher.js",
+		"/home/fy/ror/depodoc/yarn.lock",
+		"/home/fy/ror/depodoc/db/seeds.rb",
+		"/home/fy/ror/depodoc/app/models/user.rb",
+		"/home/fy/ror/depodoc/app/models/tm2_record.rb",
+		"/home/fy/ror/depodoc/app/models/docstate.rb",
+		"/home/fy/ror/depodoc/app/models/state.rb",
+		"/home/fy/ror/depodoc/app/models/opstate.rb",
+		"/home/fy/ror/depodoc/app/models/operation.rb",
+		"/home/fy/ror/depodoc/app/models/document.rb",
+		"/home/fy/ror/depodoc/db/migrate/20191020194046_documents_operations.rb",
+		"/home/fy/ror/depodoc/db/migrate/20191020164703_create_operations.rb",
+		"/home/fy/ror/depodoc/db/migrate/20191020164537_create_companies.rb",
+		"/home/fy/ror/depodoc/app/models/company.rb",
+		"/home/fy/ror/depodoc/app/models/face.rb",
+		"/home/fy/ror/depodoc/app/models/roles_user.rb",
+		"/home/fy/ror/depodoc/app/models/opstate_change.rb",
+		"/home/fy/ror/depodoc/app/models/doctype.rb",
+		"/home/fy/ror/depodoc/config/routes.rb",
+		"/home/fy/ror/depodoc/db/migrate/20191117191958_create_logs.rb",
+		"/home/fy/ror/depodoc/app/models/state_change.rb",
+		"/home/fy/ror/depodoc/app/models/docstate_change.rb",
+		"/home/fy/ror/depodoc/app/models/optype.rb",
+		"/home/fy/ror/restman/app/models/user.rb",
+		"/home/fy/ror/restman/app/javascript/packs/converter_oshchad/converter_oshchad.js",
+		"/home/fy/ror/depodoc/db/migrate/20191106210047_add_deleted_at_to_documents.rb",
+		"/home/fy/ror/depodoc/app/javascript/packs/documents/documents.jsx",
+		"/home/fy/ror/depodoc/test/fixtures/documents.yml",
+		"/home/fy/ror/depodoc/app/javascript/packs/users/users.source.coffee",
+		"/home/fy/ror/depodoc/app/javascript/packs/users/users.js",
+		"/home/fy/ror/depodoc/app/views/users/index.html.erb",
+		"/home/fy/ror/depodoc/app/controllers/documents_controller.rb",
+		"/home/fy/ror/depodoc/app/javascript/packs/application.js",
+		"/home/fy/ror/depodoc/Gemfile",
+		"/home/fy/ror/depodoc/public/packs/manifest.json",
+		"/home/fy/ror/restman/Gemfile",
+		"/home/fy/ror/depodoc/config/webpack/environment.js",
+		"/home/fy/ror/depodoc/app/controllers/roles_users_controller.rb",
+		"/home/fy/ror/depodoc/app/helpers/application_helper.rb",
+		"/home/fy/ror/depodoc/app/javascript/packs/css/app_css.scss",
+		"/home/fy/ror/depodoc/app/javascript/packs/css/common.scss",
+		"/home/fy/ror/depodoc/app/assets/stylesheets/users.scss",
+		"/home/fy/ror/depodoc/app/assets/stylesheets/common.scss",
+		"/home/fy/ror/depodoc/node_modules/@rails/webpacker/package/config.js",
+		"/home/fy/ror/depodoc/app/controllers/concerns/auth.rb",
+		"/home/fy/ror/depodoc/app/views/sessions/index.html.erb",
+		"/home/fy/ror/depodoc/app/views/roles_users/_form.html.erb",
+		"/home/fy/ror/depodoc/db/migrate/20191013214113_create_roles_users.rb",
+		"/home/fy/ror/depodoc/app/views/roles_users/show.html.erb",
+		"/home/fy/ror/depodoc/app/views/roles_users/index.html.erb",
+		"/home/fy/ror/depodoc/config/puma.rb",
+		"/home/fy/ror/depodoc/config/spring.rb",
+		"/home/fy/ror/depodoc/package.json",
+		"/home/fy/ror/depodoc/app/assets/stylesheets/application.css",
+		"/home/fy/ror/depodoc/app/javascript/packs/css/application.scss",
+		"/home/fy/ror/depodoc/app/javascript/packs/app_css.scss",
+		"/home/fy/ror/depodoc/app/assets/stylesheets/application.scss",
+		"/home/fy/ror/depodoc/app/views/home/index.html.erb",
+		"/home/fy/ror/depodoc/app/controllers/application_controller.rb",
+		"/home/fy/ror/depodoc/app/controllers/home_controller.rb",
+		"/home/fy/ror/restman/app/helpers/application_helper.rb",
+		"/home/fy/ror/restman/app/models/account.rb",
+		"/home/fy/ror/restman/app/views/accounts/index.html.erb",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/BankRests/bankRests.jsx",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/total.jsx",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/oneCompany.jsx",
+		"/home/fy/ror/restman/app/controllers/accounts_controller.rb",
+		"/home/fy/ror/nastya-page/public/index.html",
+		"/home/fy/ror/nastya-page/public/assets/styles.css",
+		"/home/fy/ror/tm2/config/routes.rb",
+		"/home/fy/ror/restman/.gitignore",
+		"/home/fy/ror/restman/config/local_env.yml",
+		"/home/fy/ror/restman/app/assets/stylesheets/groups.scss",
+		"/home/fy/ror/restman/app/javascript/packs/Day/day.scss",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/commentsBlock.jsx",
+		"/home/fy/ror/restman/app/assets/stylesheets/application.scss",
+		"/home/fy/ror/restman/app/assets/stylesheets/roles.scss",
+		"/home/fy/ror/restman/app/models/movement.rb",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/SignCompany/signCompany.jsx",
+		"/home/fy/ror/restman/app/controllers/movements_controller.rb",
+		"/home/fy/ror/restman/db/schema.rb",
+		"/home/fy/ror/restman/app/controllers/days_controller.rb",
+		"/home/fy/ror/restman/app/views/banks/index.html.erb",
+		"/home/fy/ror/restman/app/assets/stylesheets/bankrests.scss",
+		"/home/fy/ror/restman/package.json",
+		"/home/fy/ror/restman/app/assets/stylesheets/banks.scss",
+		"/home/fy/ror/restman/config/initializers/backtrace_silencers.rb",
+		"/home/fy/ror/restman/config/environments/development.rb",
+		"/home/fy/ror/restman/config/initializers/csp.rb",
+		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/gcomment.jsx",
+		"/home/fy/ror/restman/db/seeds.rb",
+		"/home/fy/ror/restman/config/database.yml",
+		"/home/fy/ror/restman/app/controllers/companies_controller.rb",
+		"/home/fy/ror/restman/app/models/roles_user.rb",
+		"/home/fy/ror/restman/app/models/role.rb",
+		"/home/fy/ror/restman/app/models/company.rb",
+		"/home/fy/ror/tm2/db/seeds.rb",
+		"/home/fy/ror/tm2/config/database.yml",
+		"/home/fy/ror/tm2/Gemfile"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Fragment",
+			"head"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/javascript/packs/App/App_documents.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								130,
+								130
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/javascript/packs/App/store/reducers/rootReducer.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/javascript/packs/App/store/reducers/documents.jsx",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								381,
+								381
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 45.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 150.0
+	},
+	"pinned_build_system": "",
+	"project": "depodoc.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"webp",
+				"config/webpacker.yml"
+			],
+			[
+				".giti",
+				".gitignore"
+			],
+			[
+				"acco c",
+				"app/controllers/accounts_controller.rb"
+			],
+			[
+				"layout",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"day.js",
+				"app/javascript/packs/Day/day.jsx"
+			],
+			[
+				"webpa",
+				"config/webpacker.yml"
+			],
+			[
+				"ya",
+				"yarn.lock"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"opera",
+				"app/models/operation.rb"
+			],
+			[
+				"operar",
+				"app/models/operation.rb"
+			],
+			[
+				"opstate_",
+				"app/models/opstate_change.rb"
+			],
+			[
+				"opstat",
+				"app/models/opstate.rb"
+			],
+			[
+				"face",
+				"app/models/face.rb"
+			],
+			[
+				"docty",
+				"app/models/doctype.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"docum",
+				"app/models/document.rb"
+			],
+			[
+				"schema",
+				"db/schema.rb"
+			],
+			[
+				"accou",
+				"app/models/account.rb"
+			],
+			[
+				"movemen",
+				"app/models/movement.rb"
+			],
+			[
+				"day.",
+				"app/models/day.rb"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"web",
+				"config/webpacker.yml"
+			],
+			[
+				"layout ",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"layout appli",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"manifes",
+				"public/packs/manifest.json"
+			],
+			[
+				"docume",
+				"app/controllers/documents_controller.rb"
+			],
+			[
+				"documents",
+				"test/fixtures/documents.yml"
+			],
+			[
+				"user.",
+				"app/models/user.rb"
+			],
+			[
+				"userr",
+				"app/models/user.rb"
+			],
+			[
+				"config.js",
+				"node_modules/@rails/webpacker/package/config.js"
+			],
+			[
+				"users control",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"index sess",
+				"app/views/sessions/index.html.erb"
+			],
+			[
+				"gemfi",
+				"Gemfile"
+			],
+			[
+				"role.rb",
+				"app/models/role.rb"
+			],
+			[
+				"seer",
+				"db/seeds.rb"
+			],
+			[
+				"databas",
+				"config/database.yml"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"auth.",
+				"app/controllers/concerns/auth.rb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"lay",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"oneCom",
+				"app/javascript/packs/Day/CompaniesMovements/oneCompany.jsx"
+			],
+			[
+				"st",
+				"public/assets/styles.css"
+			],
+			[
+				"i-se",
+				"app/javascript/packs/i-services.jsx"
+			],
+			[
+				".gi",
+				".gitignore"
+			],
+			[
+				"loca",
+				"config/local_env.yml"
+			],
+			[
+				"days con",
+				"app/controllers/days_controller.rb"
+			],
+			[
+				"day.r",
+				"app/models/day.rb"
+			],
+			[
+				"mov",
+				"app/models/movement.rb"
+			],
+			[
+				"movem con",
+				"app/controllers/movements_controller.rb"
+			],
+			[
+				"day con",
+				"app/controllers/days_controller.rb"
+			],
+			[
+				"banks index",
+				"app/views/banks/index.html.erb"
+			],
+			[
+				"total",
+				"app/javascript/packs/Day/CompaniesMovements/total.jsx"
+			],
+			[
+				"compa mo",
+				"app/javascript/packs/Day/CompaniesMovements/companiesMovements.jsx"
+			],
+			[
+				"compa jsx",
+				"app/javascript/packs/Day/CompaniesMovements/companiesMovements.jsx"
+			],
+			[
+				"deveo",
+				"config/environments/development.rb"
+			],
+			[
+				"bankre",
+				"app/javascript/packs/Day/CompaniesMovements/BankRests/bankRests.jsx"
+			],
+			[
+				"mov jsx",
+				"app/javascript/packs/Day/CompaniesMovements/EditMovement/editMovement.jsx"
+			],
+			[
+				"gcomm",
+				"app/javascript/packs/Day/CompaniesMovements/gcomment.jsx"
+			],
+			[
+				"gcomme",
+				"app/javascript/packs/Day/CompaniesMovements/gcomment.jsx"
+			],
+			[
+				"schem",
+				"db/schema.rb"
+			],
+			[
+				"compa",
+				"app/models/company.rb"
+			],
+			[
+				"RolesU",
+				"app/models/roles_user.rb"
+			],
+			[
+				"role.r",
+				"app/models/role.rb"
+			],
+			[
+				"webpacker",
+				"config/webpacker.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 291.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
