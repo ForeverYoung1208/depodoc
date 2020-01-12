@@ -29,7 +29,7 @@ const store = createStore(
 
 const DocumentsApp = props => (
 	<React.Fragment>
-		<Provider>
+		<Provider store={store}>
 		  <Documents></Documents>
 		</Provider>
 	</React.Fragment>

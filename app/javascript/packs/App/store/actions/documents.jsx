@@ -1,5 +1,5 @@
 import React from 'react'
-import {FETCH_DOCUMENTS} from './actionTypes';
+import {FETCH_DOCUMENTS, RESET_DOCUMENTS} from './actionTypes';
 
 
 const fakeDocuments = [
@@ -20,5 +20,11 @@ export function fetchDocuments(){
 	return({
     type: FETCH_DOCUMENTS,
     documents: fakeDocuments
+	})
+};
+
+export function resetDocuments(){
+	return({
+    type: RESET_DOCUMENTS
 	})
 };
