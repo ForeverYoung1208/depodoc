@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import classes from './documents.module.css'
+import Loader from '../components/loader'
 
 
 import {fetchDocuments, resetDocuments} from '../store/actions/documents'
@@ -10,10 +11,11 @@ export default function DocumentsList() {
 
   const dispatch = useDispatch();	
   const {documents} = useSelector(state => state.documents);
+  const isLoading = useSelector(state => state.documents.isLoading);
 	
   return(
   	<React.Fragment>
-  		<h1 className={classes['test-styles']}> test styles</h1>
+  		<Loader isLoading={isLoading}/>
   		<div className="col-sm-12 p-2">
 				<table className="table table-sm">
 					<thead className="thead-light">

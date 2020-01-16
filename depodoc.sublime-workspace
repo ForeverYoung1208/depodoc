@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"FETCH_DOCUMENTS_",
+				"FETCH_DOCUMENTS_START"
+			],
+			[
+				"F",
+				"FETCH_DOCUMENTS\tsource_modules"
+			],
+			[
+				"fe",
+				"fetchDocumentsStart"
+			],
+			[
+				"fun",
+				"fun\tFunction"
+			],
+			[
+				"dom",
+				"documents"
+			],
+			[
 				"rese",
 				"resetDocuments"
 			],
@@ -216,66 +236,36 @@
 	"buffers":
 	[
 		{
+			"file": "app/javascript/packs/App/pages/documents.jsx",
+			"settings":
+			{
+				"buffer_size": 1219,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/javascript/packs/App/components/loader.jsx",
+			"settings":
+			{
+				"buffer_size": 214,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/javascript/packs/App/App_documents.jsx",
 			"settings":
 			{
 				"buffer_size": 975,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/javascript/packs/App/pages/documents.jsx",
+			"file": "app/javascript/packs/App/components/loader.module.css",
 			"settings":
 			{
-				"buffer_size": 1133,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/javascript/packs/App/components/document.module.css",
-			"settings":
-			{
-				"buffer_size": 42,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/javascript/packs/App/store/reducers/documents.jsx",
-			"settings":
-			{
-				"buffer_size": 444,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/javascript/packs/App/store/actions/documents.jsx",
-			"settings":
-			{
-				"buffer_size": 626,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "fetch_documents_start.jsx"
-			}
-		},
-		{
-			"file": "app/javascript/packs/App/components/document.jsx",
-			"settings":
-			{
-				"buffer_size": 383,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "document.jsx"
-			}
-		},
-		{
-			"file": "app/javascript/packs/App/store/actions/actionTypes.jsx",
-			"settings":
-			{
-				"buffer_size": 97,
+				"buffer_size": 41,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -335,23 +325,39 @@
 		"/home/fy/ror/depodoc/app/javascript",
 		"/home/fy/ror/depodoc/app/javascript/packs",
 		"/home/fy/ror/depodoc/app/javascript/packs/App",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/axios",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/components",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/context",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/hooks",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/pages",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/store",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/store/actions",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/store/reducers",
 		"/home/fy/ror/depodoc/app/views",
+		"/home/fy/ror/depodoc/app/views/documents",
 		"/home/fy/ror/depodoc/app/views/layouts"
 	],
 	"file_history":
 	[
-		"/home/fy/ror/depodoc/node_modules/redux/src/utils/actionTypes.js",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/components/document.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/store/actions/documents.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/components/loader.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/components/loader.module.css",
+		"/home/fy/ror/depodoc/app/views/documents/index.html.erb",
+		"/home/fy/ror/depodoc/app/models/document.rb",
+		"/home/fy/ror/depodoc/app/controllers/documents_controller.rb",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/store/reducers/documents.jsx",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/store/actions/actionTypes.jsx",
+		"/home/fy/ror/depodoc/app/views/documents/_form.html.erb",
+		"/home/fy/ror/depodoc/package.json",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/App_documents.jsx",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/store/reducers/rootReducer.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/pages/documents.jsx",
+		"/home/fy/ror/depodoc/app/javascript/packs/App/components/document.module.css",
+		"/home/fy/ror/depodoc/node_modules/redux/src/utils/actionTypes.js",
 		"/home/fy/ror/depodoc/depodoc.sublime-project",
 		"/home/fy/ror/depodoc/app/javascript/packs/App/documents.jsx",
 		"/home/fy/ror/depodoc/app/javascript/packs/libs.js",
-		"/home/fy/ror/depodoc/app/views/documents/index.html.erb",
 		"/home/fy/ror/depodoc/app/views/layouts/login.html.erb",
 		"/home/fy/ror/depodoc/app/views/layouts/_head.html.erb",
 		"/home/fy/ror/depodoc/app/views/layouts/application.html.erb",
@@ -384,7 +390,6 @@
 		"/home/fy/ror/depodoc/app/models/state.rb",
 		"/home/fy/ror/depodoc/app/models/opstate.rb",
 		"/home/fy/ror/depodoc/app/models/operation.rb",
-		"/home/fy/ror/depodoc/app/models/document.rb",
 		"/home/fy/ror/depodoc/db/migrate/20191020194046_documents_operations.rb",
 		"/home/fy/ror/depodoc/db/migrate/20191020164703_create_operations.rb",
 		"/home/fy/ror/depodoc/db/migrate/20191020164537_create_companies.rb",
@@ -406,7 +411,6 @@
 		"/home/fy/ror/depodoc/app/javascript/packs/users/users.source.coffee",
 		"/home/fy/ror/depodoc/app/javascript/packs/users/users.js",
 		"/home/fy/ror/depodoc/app/views/users/index.html.erb",
-		"/home/fy/ror/depodoc/app/controllers/documents_controller.rb",
 		"/home/fy/ror/depodoc/app/javascript/packs/application.js",
 		"/home/fy/ror/depodoc/Gemfile",
 		"/home/fy/ror/depodoc/public/packs/manifest.json",
@@ -427,7 +431,6 @@
 		"/home/fy/ror/depodoc/app/views/roles_users/index.html.erb",
 		"/home/fy/ror/depodoc/config/puma.rb",
 		"/home/fy/ror/depodoc/config/spring.rb",
-		"/home/fy/ror/depodoc/package.json",
 		"/home/fy/ror/depodoc/app/assets/stylesheets/application.css",
 		"/home/fy/ror/depodoc/app/javascript/packs/css/application.scss",
 		"/home/fy/ror/depodoc/app/javascript/packs/app_css.scss",
@@ -463,16 +466,7 @@
 		"/home/fy/ror/restman/app/assets/stylesheets/banks.scss",
 		"/home/fy/ror/restman/config/initializers/backtrace_silencers.rb",
 		"/home/fy/ror/restman/config/environments/development.rb",
-		"/home/fy/ror/restman/config/initializers/csp.rb",
-		"/home/fy/ror/restman/app/javascript/packs/Day/CompaniesMovements/gcomment.jsx",
-		"/home/fy/ror/restman/db/seeds.rb",
-		"/home/fy/ror/restman/config/database.yml",
-		"/home/fy/ror/restman/app/controllers/companies_controller.rb",
-		"/home/fy/ror/restman/app/models/roles_user.rb",
-		"/home/fy/ror/restman/app/models/role.rb",
-		"/home/fy/ror/restman/app/models/company.rb",
-		"/home/fy/ror/tm2/db/seeds.rb",
-		"/home/fy/ror/tm2/config/database.yml"
+		"/home/fy/ror/restman/config/initializers/csp.rb"
 	],
 	"find":
 	{
@@ -490,6 +484,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"FETCH_DOCUMENTS_ERROR",
+			"FETCH_DOCUMENTS_START",
+			"C",
+			"SET_DOCUMENTS",
+			"FETCH_DOCUMENTS_OK",
+			"SET_DOCUMENTS",
 			"FETCH_DOCUMENTS",
 			"FETCH_DOCUMENTS_START",
 			"Fragment",
@@ -511,24 +511,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/javascript/packs/App/App_documents.jsx",
+					"file": "app/javascript/packs/App/pages/documents.jsx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 975,
+						"buffer_size": 1219,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								212,
-								212
+								335,
+								335
 							]
 						],
 						"settings":
@@ -539,81 +539,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/javascript/packs/App/pages/documents.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1133,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								466,
-								466
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/javascript/packs/App/components/document.module.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 42,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/javascript/packs/App/store/reducers/documents.jsx",
+					"buffer": 1,
+					"file": "app/javascript/packs/App/components/loader.jsx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 444,
+						"buffer_size": 214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								319,
-								319
+								187,
+								187
 							]
 						],
 						"settings":
@@ -628,90 +571,61 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/javascript/packs/App/store/actions/documents.jsx",
+					"buffer": 2,
+					"file": "app/javascript/packs/App/App_documents.jsx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 626,
+						"buffer_size": 975,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								66,
-								66
+								627,
+								627
 							]
 						],
 						"settings":
 						{
-							"auto_name": "fetch_documents_start.jsx",
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/javascript/packs/App/components/document.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 383,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								383,
-								383
-							]
-						],
-						"settings":
-						{
-							"auto_name": "document.jsx",
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 330.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/javascript/packs/App/store/actions/actionTypes.jsx",
+					"buffer": 3,
+					"file": "app/javascript/packs/App/components/loader.module.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 97,
+						"buffer_size": 41,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								97,
-								97
+								38,
+								38
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -769,6 +683,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"loader.jsx",
+				"app/javascript/packs/App/components/loader.jsx"
+			],
+			[
+				"document cont",
+				"app/controllers/documents_controller.rb"
+			],
+			[
+				"document",
+				"app/models/document.rb"
+			],
+			[
+				"docume jsx",
+				"app/javascript/packs/App/pages/documents.jsx"
+			],
 			[
 				"actionT",
 				"node_modules/redux/src/utils/actionTypes.js"

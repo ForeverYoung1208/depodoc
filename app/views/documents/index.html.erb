@@ -15,6 +15,7 @@
     <tr>
       <th>Name</th>
       <th>Face</th>
+      <th>Doctype</th>
       <th>Note</th>
       <th colspan="3"></th>
     </tr>
@@ -25,6 +26,7 @@
       <tr>
         <td><%= document.name %></td>
         <td><%= document.face_id %></td>
+        <td><%= document.doctype_id %></td>
         <td><%= document.note %></td>
         <td><%= link_to 'Show', document %></td>
         <td><%= link_to 'Edit', edit_document_path(document) %></td>
