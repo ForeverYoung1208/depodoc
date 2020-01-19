@@ -9,7 +9,6 @@ const initialState = {
 
 
 export default function documentsReducer(state=initialState, action) {
-  console.log( action)
 
   switch (action.type) {
     case FETCH_DOCUMENTS_START:

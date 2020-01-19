@@ -1,5 +1,5 @@
-import React from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector} from "react-redux";
 import classes from './documents.module.css'
 import Loader from '../components/loader'
 
@@ -12,6 +12,9 @@ export default function DocumentsList() {
   const dispatch = useDispatch();	
   const {documents} = useSelector(state => state.documents);
   const isLoading = useSelector(state => state.documents.isLoading);
+  useEffect(()=> {
+  	dispatch(fetchDocuments())
+  },[] ) 
 	
   return(
   	<React.Fragment>
@@ -21,11 +24,12 @@ export default function DocumentsList() {
 					<thead className="thead-light">
 						<tr>
 							<th>id</th>
-							<th>name</th>
-							<th>face_id</th>
-							<th>note</th>
-							<th>created_at</th>
-							<th>updated_at</th>
+							<th>Тип документа</th>
+							<th>В компании</th>
+							<th>По лицу</th>
+							<th>Текущее состояние</th>
+							<th>В операциях</th>
+							<th>Примечаия</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -37,8 +41,7 @@ export default function DocumentsList() {
 				  	)}
 					</tbody>
 				</table>
-		  	<button onClick={() => dispatch(resetDocuments())}>reset</button>
-		  	<button onClick={() => dispatch(fetchDocuments())}>get_documents</button>
+		  	<button onClick={() => dispatch(fetchDocuments())}>Обновить</button>
 	  	</div>
 	  </React.Fragment>
   )

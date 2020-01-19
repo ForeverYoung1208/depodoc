@@ -38,6 +38,7 @@
                           'Користувачі' => [users_path, @current_user.can_view_users?],
                           'Ролі' => [roles_path, @current_user.can_edit_roles?],
                           'Особи' => [faces_path, @current_user.can_edit_faces?],
+                          'Стан документа' => [docstates_path, @current_user.can_edit_docstates?],
                         }
           }) {"Налаштування"}  %>
 

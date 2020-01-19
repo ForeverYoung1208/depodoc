@@ -89,6 +89,12 @@ class User < Tm2Record
     is_admin
   end
 
+  def can_edit_docstates?
+    # true
+    is_admin
+  end
+
+
   def can_edit_faces?
     true
   end

@@ -7,10 +7,13 @@ export default function Document(props){
 		<tr>
 			<td className={classes['test-styles']}>{document.id}</td>
 			<td>{document.name}</td>
-			<td>{document.face_id}</td>
-			<td>{document.note}</td>
-			<td>{document.created_at}</td>
-			<td>{document.updated_at}</td>
-		</tr>
+			<td>{document.companies.map( cmp => <span key={cmp.id}> {cmp.name}</span>)}	</td>
+			<td>{document.face.name}</td>
+			<td>{document.last_docstate}
+				<button>История</button>
+			</td>
+			<td>{document.operations.map( op => <span key={op.id}> {op.name}</span>)}	</td>
+			<td>{document.note}, ({document.updated_at})</td>
+		</tr> 
 	)
 }
