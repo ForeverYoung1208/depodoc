@@ -12,7 +12,6 @@ import thunk from 'redux-thunk'
 
 
 const routes = useRoutes()
-console.log(routes)
 
 const composeEnhancers =
   typeof window === 'object' &&
