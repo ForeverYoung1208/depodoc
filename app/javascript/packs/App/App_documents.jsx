@@ -10,10 +10,9 @@ import {Provider} from 'react-redux'
 import rootReducer from './store/reducers/rootReducer'
 import thunk from 'redux-thunk'
 
-// export const DocumentsContext = React.createContext();
 
 const routes = useRoutes()
-
+console.log(routes)
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -34,15 +33,7 @@ const DocumentsApp = props => (
 	<React.Fragment>
 		<Provider store={store}>
       <BrowserRouter>
-        <Switch>
-          <Route path="/documents"  >
-            <Documents />
-          </Route>
-
-          <Redirect to="/" />
-        </Switch>
-  		   
-         
+        {routes}
       </BrowserRouter>
 		</Provider>
 	</React.Fragment>

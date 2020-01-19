@@ -7,7 +7,7 @@ import Loader from '../components/loader'
 import {fetchDocuments, resetDocuments} from '../store/actions/documents'
 import Document from '../components/document';
 
-export default function DocumentsList() {
+export default function Documents() {
 
   const dispatch = useDispatch();	
   const {documents} = useSelector(state => state.documents);
