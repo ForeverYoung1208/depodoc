@@ -4,7 +4,7 @@ import { FETCH_DOCUMENTS, RESET_DOCUMENTS, FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_S
 const initialState = {
 	documents: [],
   isLoading: false,
-  documentsFetchError: null
+  fetchErrorText: null
 }
 
 
@@ -21,14 +21,16 @@ export default function documentsReducer(state=initialState, action) {
       return {
         ...state,
         documents: action.documents,
-        isLoading: false
+        isLoading: false,
+        fetchErrorText: null
       };
 
     case FETCH_DOCUMENTS_ERROR:
+      console.log( action.error)
       return {
         ...state,
         isLoading: false,
-        documentsFetchError: action.error
+        fetchErrorText: action.error.message
       };
 
     case RESET_DOCUMENTS:

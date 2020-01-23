@@ -11,8 +11,9 @@ import Document from '../components/document';
 export default function Documents() {
 
   const dispatch = useDispatch();	
-  const {documents} = useSelector(state => state.documents);
-  const isLoading = useSelector(state => state.documents.isLoading);
+  const {documents} = useSelector(state => state.documents)
+  const {isLoading, fetchErrorText} = useSelector(state => state.documents)
+
   useEffect(()=> {
   	dispatch(fetchDocuments())
   },[] ) 
@@ -20,7 +21,7 @@ export default function Documents() {
   return(
   	<React.Fragment>
   		<Loader isLoading={isLoading}/>
-  		<DocsStatusBar/>
+  		<DocsStatusBar errorText={fetchErrorText}/>
   		<div className="col-sm-12 p-0 pl-1">
 				<table className="table table-sm">
 					<thead className="thead-light">
@@ -35,12 +36,13 @@ export default function Documents() {
 						</tr>
 					</thead>
 					<tbody>
-				  	{documents.map((document)=> 
+				  	{fetchErrorText ? <tr className="alert alert-danger" role="alert"><td colSpan="7">{fetchErrorText}</td></tr>
+				  		: documents.map((document)=> 
 				  		<Document 
 				  			key={document.id} 
 				  			document={document}
-				  		/> 
-				  	)}
+				  		/> )
+				  	}
 					</tbody>
 				</table>
 	  	</div>
