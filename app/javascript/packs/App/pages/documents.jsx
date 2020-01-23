@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector} from "react-redux";
 import classes from './documents.module.css'
-import Loader from '../components/loader'
+import Loader from '../UI/loader'
+import DocsStatusBar from '../components/docsStatusBar'
 
 
 import {fetchDocuments, resetDocuments} from '../store/actions/documents'
@@ -19,10 +20,11 @@ export default function Documents() {
   return(
   	<React.Fragment>
   		<Loader isLoading={isLoading}/>
-  		<div className="col-sm-12 p-2">
+  		<DocsStatusBar/>
+  		<div className="col-sm-12 p-0 pl-1">
 				<table className="table table-sm">
 					<thead className="thead-light">
-						<tr>
+						<tr className={classes["doctable-headers"]}>
 							<th>id</th>
 							<th>Тип документа</th>
 							<th>В компании</th>
@@ -41,7 +43,6 @@ export default function Documents() {
 				  	)}
 					</tbody>
 				</table>
-		  	<button onClick={() => dispatch(fetchDocuments())}>Обновить</button>
 	  	</div>
 	  </React.Fragment>
   )

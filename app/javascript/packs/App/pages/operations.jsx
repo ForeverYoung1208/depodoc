@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './operations.module.css'
-import Loader from '../components/loader'
+import Loader from '../UI/loader'
 
 export default function(){
 
