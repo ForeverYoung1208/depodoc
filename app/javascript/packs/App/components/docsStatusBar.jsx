@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import {useDispatch} from "react-redux";
+import {useDispatch} from 'react-redux';
 import {fetchDocuments} from '../store/actions/documents'
 import ButtonRefresh from '../UI/buttonRefresh'
 import Modal from '../UI/modal'
-
-const NewDocFrom=()=><h1>NewDocFrom</h1>
+import NewDocForm from './newDocForm'
 
 export default function DocStatusBar(props) {
   const dispatch = useDispatch();
@@ -24,8 +23,11 @@ export default function DocStatusBar(props) {
 				<i className="fas fa-plus"></i>
 			</button>
 
-			<Modal isModalShowing={isNewDocShowing} setIsModalShowing={setIsNewDocShowing}>
-				<NewDocFrom/>
+			<Modal 
+				isModalShowing={isNewDocShowing} 
+				setIsModalShowing={setIsNewDocShowing} 
+				caption='Новий документ'>
+					<NewDocForm whenDone={()=>setIsNewDocShowing(false)}/>
 			</Modal>
 
 		</div>
