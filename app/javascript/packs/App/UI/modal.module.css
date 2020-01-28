@@ -1,4 +1,4 @@
-.Modal {
+/*.Modal {
   position: absolute;
   top: 40px;
   left: 40px;
@@ -6,9 +6,9 @@
   bottom: 40px;
   background-color: white;
   border-radius: 5px;
-}
+}*/
 
-.Overlay {
+/*.Overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +16,7 @@
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
 }
+*/
 
 .header{
   border-bottom: solid gray 1px;
@@ -24,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 10px;
 }
 .header button{
   margin: 5px;
@@ -35,3 +37,6 @@
 .close_btn{
   border: none;
 }
+
+
+

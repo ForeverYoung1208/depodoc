@@ -1,0 +1,32 @@
+/* https://github.com/reactjs/react-modal/issues/283 */
+
+/*prevents background page from scrolling when the modal is open */
+.ReactModal__Body--open {
+  overflow: hidden;  
+}
+
+.ReactModal__Overlay {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReactModal__Content {
+	min-height: fit-content;
+  border-radius: 5px;
+	
+  background: red;
+  width: 50rem;
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100vh - 3rem);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  position: relative;
+}
