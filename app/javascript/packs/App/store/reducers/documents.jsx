@@ -33,6 +33,12 @@ export default function documentsReducer(state=initialState, action) {
         fetchErrorText: action.error.message
       };
 
+    case POST_DOCUMENT_OK:
+      return{
+        ...state
+      }
+
+
     case RESET_DOCUMENTS:
       return {
       	...state,

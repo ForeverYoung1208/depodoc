@@ -3,8 +3,12 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import classes from './newDocForm.module.css'
 import Loader from '../UI/loader'
 import Input from '../UI/input'
+import { useDispatch } from 'react-redux'
+import { postDocumentStart } from '../store/actions/documents'
 
 export default function NewDocForm(props){
+
+	const dispatch = useDispatch()
 
 	function validatePresense(value) {
 	  let error
@@ -13,6 +17,8 @@ export default function NewDocForm(props){
 	  }
 	  return error;
 	}
+
+
 
 	return(
 	  <div>
@@ -24,11 +30,17 @@ export default function NewDocForm(props){
 	      	note:''
 				}}
 	      onSubmit={(values, actions) => {
-	      	setTimeout(()=> {
-	      		alert('submitted! '+ values.docname )
-	      		actions.setSubmitting(false)
-	          console.log(values, actions)
-	      	}, 2000 )
+					
+					dispatch(postDocumentStart(values))
+					actions.setSubmitting(false)
+
+					// setTimeout(()=> {
+	      	// 	alert('submitted! '+ values.docname )
+	      	// 	actions.setSubmitting(false)
+	        //   console.og(values, actions)
+					// }, 2000 )
+					
+
         }}
 	    >
 	      { ({isSubmitting}) => (
@@ -39,7 +51,7 @@ export default function NewDocForm(props){
 		          as='select'
 		          label='Тип докуента'
 		          type='text'
-	            className='custom-select col-md-3'
+	            className='custom-select col-6'
 	            name="doctype"
 	            disabled={isSubmitting}
 		        >
@@ -50,7 +62,8 @@ export default function NewDocForm(props){
 	          <Input
 	            type="text"
 	            label="Назва документа"
-	            name="docname"
+							name="docname"
+							className='col-6'
 	            validate={validatePresense} 
 	            disabled={isSubmitting}
 	          />
@@ -58,7 +71,8 @@ export default function NewDocForm(props){
 	          <Input
 	          	label="Належить особі"
 	            type="text"
-	            name="face"
+							className='col-6'
+							name="face"
 	            disabled={isSubmitting}
 	          />
 
@@ -66,7 +80,8 @@ export default function NewDocForm(props){
 	            type="text"
 	            name="note"
 	            label="Примітки"
-	            validate={validatePresense} 
+							className='col-6'
+							validate={validatePresense} 
 	            disabled={isSubmitting}
 	          >
 						</Input>
