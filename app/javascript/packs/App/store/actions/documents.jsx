@@ -38,16 +38,36 @@ export function fetchDocuments(){
 	}
 };
 
-export function postDocumentStart(document) {
-	console.log('[ postDocumentStart document]', document);
+export function postDocument(document){
+	return async (dispatch) => {
+		dispatch(postDocumentStart())
+		try{
+			const token = getElementsByName("csrf-token")[0].getAttribute('content');	
+			debugger
 
-	return async (dispatch) =>{
-		const result = await Axios.post('/document.json').then(res=> res.data)
-		dispatch(postDocumentOk(result))
+		
+
+			const res = await Axios.post('/documents.json', document)// .then(res=> res.data)
+			console.log('[res]', res);
+			console.log('[document]', document);
+
+			debugger;
+
+			dispatch(postDocumentOk(res))
+		} catch (e) {
+			console.log('postDocuments error---:', e)	
+			// dispatch(postDocumentsError(e))
+		}
+	}
+};
+
+export function postDocumentStart() {
+	return {
+		type: POST_DOCUMENT_START
 	}
 }
 
-function postDocumentOk(result) {
+export function postDocumentOk(result) {
 	console.log('[postDocumentOk result]', result);
 	return({
     type: POST_DOCUMENT_OK

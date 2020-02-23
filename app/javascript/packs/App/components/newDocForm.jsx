@@ -4,7 +4,7 @@ import classes from './newDocForm.module.css'
 import Loader from '../UI/loader'
 import Input from '../UI/input'
 import { useDispatch } from 'react-redux'
-import { postDocumentStart } from '../store/actions/documents'
+import { postDocument } from '../store/actions/documents'
 
 export default function NewDocForm(props){
 
@@ -31,7 +31,7 @@ export default function NewDocForm(props){
 				}}
 	      onSubmit={(values, actions) => {
 					
-					dispatch(postDocumentStart(values))
+					dispatch(postDocument(values))
 					actions.setSubmitting(false)
 
 					// setTimeout(()=> {
