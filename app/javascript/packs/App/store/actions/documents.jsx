@@ -1,7 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import {FETCH_DOCUMENTS, RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_ERROR,
-	POST_DOCUMENT_START	
+	POST_DOCUMENT_START, POST_DOCUMENT_OK
 } from './actionTypes';
 
 
@@ -38,20 +38,21 @@ export function fetchDocuments(){
 	}
 };
 
-export function postDocument(document){
+export function postDocument(doc){
 	return async (dispatch) => {
 		dispatch(postDocumentStart())
 		try{
-			const token = getElementsByName("csrf-token")[0].getAttribute('content');	
-			debugger
+			const csrfToken = document.getElementsByName("csrf-token")[0].getAttribute('content');	
 
-		
-
-			const res = await Axios.post('/documents.json', document)// .then(res=> res.data)
+			const res = await Axios.post(
+				'/documents.json', 
+				{document:{...doc}},   
+				{headers: {
+				'Content-Type': 'application/json',
+				'X-CSRF-Token': csrfToken
+			}})// .then(res=> res.data)
 			console.log('[res]', res);
-			console.log('[document]', document);
-
-			debugger;
+			console.log('[doc]', [doc]);
 
 			dispatch(postDocumentOk(res))
 		} catch (e) {

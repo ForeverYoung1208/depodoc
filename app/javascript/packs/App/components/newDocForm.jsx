@@ -24,15 +24,16 @@ export default function NewDocForm(props){
 	  <div>
 	    <Formik
 	      initialValues={{ 
-	      	doctype:'',
-	      	docname: '',
-	      	face:'',
+	      	doctype_id: '',
+	      	name: '',
+	      	face_id:'',
 	      	note:''
 				}}
 	      onSubmit={(values, actions) => {
 					
 					dispatch(postDocument(values))
 					actions.setSubmitting(false)
+					// actions.setSubmitting(true)
 
 					// setTimeout(()=> {
 	      	// 	alert('submitted! '+ values.docname )
@@ -43,7 +44,7 @@ export default function NewDocForm(props){
 
         }}
 	    >
-	      { ({isSubmitting}) => (
+	      { ({isSubmitting, handleChange, values}) => (
 
 
 	        <Form>
@@ -52,8 +53,10 @@ export default function NewDocForm(props){
 		          label='Тип докуента'
 		          type='text'
 	            className='custom-select col-6'
-	            name="doctype"
-	            disabled={isSubmitting}
+	            name="doctype_id"
+							disabled={isSubmitting}
+							onChange={handleChange}
+							value={values.firstName}								
 		        >
 	          	 	<option value="1">1</option>
 		          	<option value="2">2</option>
@@ -62,7 +65,7 @@ export default function NewDocForm(props){
 	          <Input
 	            type="text"
 	            label="Назва документа"
-							name="docname"
+							name="name"
 							className='col-6'
 	            validate={validatePresense} 
 	            disabled={isSubmitting}
@@ -72,7 +75,7 @@ export default function NewDocForm(props){
 	          	label="Належить особі"
 	            type="text"
 							className='col-6'
-							name="face"
+							name="face_id"
 	            disabled={isSubmitting}
 	          />
 
