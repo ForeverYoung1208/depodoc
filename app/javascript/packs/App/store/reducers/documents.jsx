@@ -5,7 +5,17 @@ POST_DOCUMENT_OK, POST_DOCUMENT_START} from '../actions/actionTypes';
 const initialState = {
 	documents: [],
   isLoading: false,
-  fetchErrorText: null
+  fetchErrorText: null,
+  voc:{
+    doctypes:[   
+      {"id":1,"name":"anketa1"},
+      {"id":2,"name":"many documents2"}
+    ],
+    faces:[
+      {"id":1,"name":"face1"},
+      {"id":2,"name":"face2"}
+    ]
+  }
 }
 
 

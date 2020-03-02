@@ -51,8 +51,7 @@ export function postDocument(doc){
 				'Content-Type': 'application/json',
 				'X-CSRF-Token': csrfToken
 			}})// .then(res=> res.data)
-			console.log('[res]', res);
-			console.log('[doc]', [doc]);
+			console.log('[res]', res.data);
 
 			dispatch(postDocumentOk(res))
 		} catch (e) {
