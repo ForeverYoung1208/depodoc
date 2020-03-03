@@ -48,13 +48,13 @@ export default function documentsReducer(state=initialState, action) {
       case POST_DOCUMENT_OK:
       return{
         ...state,
-        isLoading: true
+        isLoading: false
       }
 
       case POST_DOCUMENT_START:
       return{
         ...state,
-        isLoading: false
+        isLoading: true
       }
 
 
