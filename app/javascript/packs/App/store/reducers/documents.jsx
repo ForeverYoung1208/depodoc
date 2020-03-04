@@ -49,7 +49,7 @@ export default function documentsReducer(state=initialState, action) {
       return{
         ...state,
         isLoading: false,
-        documents: [action.document, ...state.documents ]
+        documents: [...state.documents, action.document ]
       }
 
       case POST_DOCUMENT_START:

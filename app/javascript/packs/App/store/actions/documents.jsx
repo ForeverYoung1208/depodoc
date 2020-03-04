@@ -50,10 +50,10 @@ export function postDocument(doc){
 				{headers: {
 				'Content-Type': 'application/json',
 				'X-CSRF-Token': csrfToken
-			}})// .then(savedDocument=> savedDocument.data)
+			}})
 			console.log('[savedDocument]', savedDocument.data);
 
-			dispatch(postDocumentOk(savedDocument.data))
+			dispatch(postDocumentOk(savedDocument.data));
 		} catch (e) {
 			console.log('postDocuments error---:', e)	
 			// dispatch(postDocumentsError(e))
