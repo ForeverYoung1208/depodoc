@@ -44,16 +44,16 @@ export function postDocument(doc){
 		try{
 			const csrfToken = document.getElementsByName("csrf-token")[0].getAttribute('content');	
 
-			const res = await Axios.post(
+			const savedDocument = await Axios.post(
 				'/documents.json', 
 				{document:{...doc}},   
 				{headers: {
 				'Content-Type': 'application/json',
 				'X-CSRF-Token': csrfToken
-			}})// .then(res=> res.data)
-			console.log('[res]', res.data);
+			}})// .then(savedDocument=> savedDocument.data)
+			console.log('[savedDocument]', savedDocument.data);
 
-			dispatch(postDocumentOk(res))
+			dispatch(postDocumentOk(savedDocument.data))
 		} catch (e) {
 			console.log('postDocuments error---:', e)	
 			// dispatch(postDocumentsError(e))
@@ -67,10 +67,11 @@ export function postDocumentStart() {
 	}
 }
 
-export function postDocumentOk(result) {
-	console.log('[postDocumentOk result]', result);
+export function postDocumentOk(document) {
+	console.log('[postDocumentOk document]', document);
 	return({
-    type: POST_DOCUMENT_OK
+	type: POST_DOCUMENT_OK,
+	document
 	})	
 }
 
