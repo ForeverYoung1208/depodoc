@@ -1,7 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import {FETCH_DOCUMENTS, RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_ERROR,
-	POST_DOCUMENT_START, POST_DOCUMENT_OK
+	POST_DOCUMENT_START, POST_DOCUMENT_OK, POST_DOCUMENT_ERROR
 } from './actionTypes';
 
 
@@ -38,7 +38,7 @@ export function fetchDocuments(){
 	}
 };
 
-export function postDocument(doc){
+export function postDocument(doc,formikActions,closeModalFn){
 	return async (dispatch) => {
 		dispatch(postDocumentStart())
 		try{
@@ -51,12 +51,11 @@ export function postDocument(doc){
 				'Content-Type': 'application/json',
 				'X-CSRF-Token': csrfToken
 			}})
-			console.log('[savedDocument]', savedDocument.data);
-
-			dispatch(postDocumentOk(savedDocument.data));
+			dispatch(postDocumentOk(savedDocument.data, formikActions));
+			closeModalFn();
 		} catch (e) {
-			console.log('postDocuments error---:', e)	
-			// dispatch(postDocumentsError(e))
+			dispatch(postDocumentError(e, formikActions))
+			closeModalFn();			
 		}
 	}
 };
@@ -67,11 +66,23 @@ export function postDocumentStart() {
 	}
 }
 
-export function postDocumentOk(document) {
+export function postDocumentOk(document, formikActions) {
 	console.log('[postDocumentOk document]', document);
+	formikActions.setSubmitting(false)	
+
 	return({
 	type: POST_DOCUMENT_OK,
 	document
+	})	
+}
+
+export function postDocumentError(error, formikActions) {
+	console.log('[postDocumentError error]', error);
+	formikActions.setSubmitting(false)	
+
+	return({
+	type: POST_DOCUMENT_ERROR,
+	error
 	})	
 }
 

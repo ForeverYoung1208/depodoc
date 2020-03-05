@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { postDocument } from '../../store/actions/documents'
 
 export default function NewDocForm(props){
-
+	const {closeModalFn} = props
 	const dispatch = useDispatch()
 	const { doctypes, faces } = useSelector(state => state.documents.voc)
 	
@@ -31,9 +31,8 @@ export default function NewDocForm(props){
 	      	face_id: faces[0].id,
 	      	note:''
 				}}
-	      onSubmit={(values, actions) => {
-					dispatch(postDocument(values))
-					// actions.setSubmitting(false)
+	      onSubmit={(documentValues, actions) => {
+					dispatch(postDocument(documentValues, actions, closeModalFn))
         }}
 	    >
 	      { ({isSubmitting, handleChange, values}) => (
@@ -48,8 +47,6 @@ export default function NewDocForm(props){
 	            validate={validatePresense} 
 	            name="doctype_id"
 							disabled={isSubmitting}
-							// onChange={handleChange}
-							// value={values.doctype_id || doctypes[0].id } 
 		        >
 								{doctypes.map( doctype => 
 									<option key={doctype.id} value={doctype.id}>{'(id '+doctype.id + '): ' +doctype.name}</option>
@@ -73,8 +70,6 @@ export default function NewDocForm(props){
 							name="face_id"
 							disabled={isSubmitting}
 							validate={validatePresense} 
-							// onChange={handleChange}
-							// value={values.face_id || faces[0].id}
 	          >
 							{faces.map( face => 
 								<option key={face.id} value={face.id}>{'(id '+face.id + '): ' +face.name}</option>

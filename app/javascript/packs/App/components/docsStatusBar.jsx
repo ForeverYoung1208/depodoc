@@ -27,7 +27,7 @@ export default function DocStatusBar(props) {
 				isModalShowing={isNewDocShowing} 
 				setIsModalShowing={setIsNewDocShowing} 
 				caption='Новий документ'>
-					<NewDocForm whenDone={()=>setIsNewDocShowing(false)}/>
+					<NewDocForm closeModalFn={()=>setIsNewDocShowing(false)}/>
 			</Modal>
 
 		</div>
