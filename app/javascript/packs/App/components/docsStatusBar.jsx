@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {fetchDocuments} from '../store/actions/documents'
 import ButtonRefresh from '../UI/buttonRefresh'
 import Modal from '../UI/modal'
-import NewDocForm from './docsStatusBar/newDocForm'
+import NewDocForm from './document/newDocForm'
 
 export default function DocStatusBar(props) {
   const dispatch = useDispatch();
