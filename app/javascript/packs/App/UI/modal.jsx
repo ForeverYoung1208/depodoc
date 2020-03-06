@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './modal.module.css'
 import ReactModal from 'react-modal';
 
-function DocumentNewModal(props) {
+function Modal(props) {
 	const {isModalShowing, setIsModalShowing, caption} = props
 
 	return(
@@ -28,4 +28,4 @@ function DocumentNewModal(props) {
 }
 
 
-export default DocumentNewModal
+export default Modal
