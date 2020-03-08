@@ -3,9 +3,10 @@ import classes from './modal.module.css'
 import ReactModal from 'react-modal';
 
 function Modal(props) {
-	const {isModalShowing, setIsModalShowing, caption} = props
+	const {closeModalFn, caption} = props
+  const isModalShowing = true; 
 
-	return(
+  return(
 
         <ReactModal 
            isOpen={isModalShowing}
@@ -17,7 +18,7 @@ function Modal(props) {
 
           <div className={classes['header']}>
             <div className={classes['caption']}><h4>{caption}</h4></div>
-            <button className={classes['close_btn']+' btn btn-outline-primary btn-sm'} onClick={() => setIsModalShowing(false)}><i className="fa fa-times" aria-hidden="true"></i></button>
+            <button className={classes['close_btn']+' btn btn-outline-primary btn-sm'} onClick={() => closeModalFn()}><i className="fa fa-times" aria-hidden="true"></i></button>
             
           </div>
 

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import classes from './document.module.css'
 
 function DocStateControls(props){
-	const {document, showNewStateModal} = props
+	const {document, addNewStateModal} = props
 	return(
 		<React.Fragment>
 			{document.last_docstate &&
@@ -17,7 +17,7 @@ function DocStateControls(props){
 
 			<button
 				className={classes['doc-btn-proceed'] +' btn btn-outline-primary btn-sm p-0'}
-				onClick={()=>showNewStateModal()}
+				onClick={()=>addNewStateModal()}
 			>
 				<i className="fas fa-angle-double-right"></i>				
 				
@@ -30,14 +30,14 @@ function DocStateControls(props){
 
 
 export default function Document(props){
-	const {document, showNewStateModal} = props
+	const {document, addNewStateModal} = props
 	return(
 		<tr>
 			<td className={classes['col-id']}>{document.id}</td>
 			<td>{document.name}</td>
 			<td>{document.companies.map( cmp => <span key={cmp.id}> {cmp.name}</span>)}	</td>
 			<td>{document.face.name}</td>
-			<td><DocStateControls document={document} showNewStateModal={showNewStateModal} />	</td>
+			<td><DocStateControls document={document} addNewStateModal={addNewStateModal} />	</td>
 			<td>{document.operations.map( op => (
 						<Link to={`/operations/${op.id}`} key={op.id}> 
 							{op.name}

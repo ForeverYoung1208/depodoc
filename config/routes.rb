@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  ### overriding and cancelling "resources" statement for frontend routes
+  get 'documents/add', to: "documents#index"
+  get 'documents/:id/new_state', to: "documents#index"
+
+  ###^^^^
+
   resources :logs
   resources :opstate_changes
   resources :operations
@@ -18,6 +24,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     get 'current', to: 'users#current', on: :collection
   end
+
   post 'users', to: "users#update_roles", as: "update_roles"
 
   

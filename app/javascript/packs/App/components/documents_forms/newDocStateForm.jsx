@@ -1,17 +1,18 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import classes from './changeDocStateForm.module.css'
+import classes from './newDocStateForm.module.css'
 import Loader from '../../UI/loader'
 import Input from '../../UI/input'
 import { useDispatch, useSelector } from 'react-redux'
 import { postDocument } from '../../store/actions/documents'
+import { useParams } from 'react-router-dom'
 
-export default function ChangeDocStateForm(params) {
-  const {document} = params;
+export default function NewDocStateForm() {
   
   const states = [{id:1, name:'name1'},{id:2, name:'name2'},{id:3, name:'name3'},]
+  let {id:documentId} = useParams()
   
-  return ''
+    return `Document ${documentId}`
 
 
   // return(

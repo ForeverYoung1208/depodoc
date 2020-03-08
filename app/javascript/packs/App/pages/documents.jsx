@@ -1,16 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector} from "react-redux";
-import Modal from '../UI/modal'
+import { Switch, Route, useHistory } from 'react-router-dom';
 
+import {fetchDocuments, resetDocuments} from '../store/actions/documents';
 
-import classes from './documents.module.css'
-import Loader from '../UI/loader'
-import DocsStatusBar from '../components/docsStatusBar'
-import {fetchDocuments, resetDocuments} from '../store/actions/documents'
+import {redirectToDocuments, redirectToNewDocModal, redirectToNewStateModal} from '../routes'
 
+import classes from './documents.module.css';
+import Modal from '../UI/modal';
+import Loader from '../UI/loader';
+import DocsStatusBar from '../components/docsStatusBar';
 import Document from '../components/document';
-import NewDocForm from '../components/documents_forms/newDocForm'
-import NewStateForm from '../components/documents_forms/changeDocStateForm'
+import NewDocForm from '../components/documents_forms/newDocForm';
+import NewDocStateForm from '../components/documents_forms/newDocStateForm';
 
 
 export default function Documents() {
@@ -18,9 +20,8 @@ export default function Documents() {
   const dispatch = useDispatch();	
   const {documents} = useSelector(state => state.documents)
 	const {isLoading, fetchErrorText} = useSelector(state => state.documents)
+	const history = useHistory();
 	
-	const [isStateModalShowing, setIsStateModalShowing] = useState(false)
-  const [isNewDocShowing, setIsNewDocShowing]=useState(false)
 
   useEffect(()=> {
   	dispatch(fetchDocuments())
@@ -31,7 +32,7 @@ export default function Documents() {
   		<Loader isLoading={isLoading}/>
 			<DocsStatusBar 
 				errorText={fetchErrorText}
-				showNewDocModal={ ()=> setIsNewDocShowing(true) }
+				showNewDocModal={ ()=> redirectToNewDocModal(history) }
 			/>
   		<div className = "col-sm-12 p-0 pl-1">
 				<table className = "table table-sm">
@@ -52,26 +53,32 @@ export default function Documents() {
 				  		<Document 
 				  			key = {document.id} 
 								document = {document}
-								showNewStateModal = {()=>setIsStateModalShowing(true)}
+								addNewStateModal = {()=>redirectToNewStateModal(history, document.id)}
 				  		/> )
 				  	}
 					</tbody>
 				</table>
 
-				<Modal 
-					isModalShowing={isNewDocShowing} 
-					setIsModalShowing={setIsNewDocShowing} 
-					caption='Новий документ'>
-						<NewDocForm closeModalFn={()=>setIsNewDocShowing(false)}/>
-				</Modal>
+				<Switch>
+					<Route path={'/documents/add'}>
+						<Modal 
+							closeModalFn={()=>redirectToDocuments(history)}
+							caption='Новий документ'>
+							<NewDocForm closeModalFn={()=>redirectToDocuments(history)}/>
+						</Modal>
+					</Route>
+
+					<Route path={`/documents/:id/new_state`}>
+						<Modal
+							closeModalFn={()=>redirectToDocuments(history)}
+							caption='Новий стан документа'>
+								<NewDocStateForm closeModalFn={()=>redirectToDocuments(history)}/>
+						</Modal>
+					</Route>
+				</Switch>
 
 
-				<Modal 
-					isModalShowing={isStateModalShowing} 
-					setIsModalShowing={setIsStateModalShowing} 
-					caption='Новий стан документа'>
-						<NewStateForm closeModalFn={()=>setIsStateModalShowing(false)}/>
-				</Modal>
+
 				
 				
 	  	</div>
