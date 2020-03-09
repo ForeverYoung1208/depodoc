@@ -9,7 +9,7 @@ import { postDocument } from '../../store/actions/documents'
 export default function NewDocForm(props){
 	const {closeModalFn} = props
 	const dispatch = useDispatch()
-	const { doctypes, faces } = useSelector(state => state.documents.voc)
+	const { doctypes, faces } = useSelector(state => state.voc)
 	
 
 	function validatePresense(value) {

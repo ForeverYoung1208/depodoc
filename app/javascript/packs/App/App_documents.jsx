@@ -1,20 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 import ReactModal from 'react-modal'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
-import {useMainRoutes} from './routes'
+import {MainRoutes} from './routes'
 import {createStore, compose, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import rootReducer from './store/reducers/rootReducer'
 import thunk from 'redux-thunk'
 
-import Documents from './pages/documents'
+//import Documents from './pages/documents'
 
 
 ReactModal.setAppElement('#documents-app')
 
-const routes = useMainRoutes()
+// const routes = useMainRoutes()
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -35,7 +34,7 @@ const DocumentsApp = props => (
 	<React.Fragment>
 		<Provider store={store}>
       <BrowserRouter>
-        {routes}
+        <MainRoutes />
       </BrowserRouter>
 		</Provider>
 	</React.Fragment>

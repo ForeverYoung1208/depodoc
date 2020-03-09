@@ -1,9 +1,21 @@
 import React from 'react'
 import Axios from 'axios'
-import {FETCH_DOCUMENTS, RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_ERROR,
+import {RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_ERROR,
 	POST_DOCUMENT_START, POST_DOCUMENT_OK, POST_DOCUMENT_ERROR
 } from './actionTypes';
 
+export function fetchDocuments(){
+	return async (dispatch) => {
+		dispatch(fetchDocumentsStart())
+		try{
+			const documents = await Axios.get('/documents.json').then(res=> res.data)
+			dispatch(fetchDocumentsOk(documents))
+		} catch (e) {
+			console.log('fetchDocuments error---:', e)	
+			dispatch(fetchDocumentsError(e))
+		}
+	}
+};
 
 function fetchDocumentsStart() {
 	return({
@@ -25,18 +37,6 @@ function fetchDocumentsError(error){
 	})
 }
 
-export function fetchDocuments(){
-	return async (dispatch) => {
-		dispatch(fetchDocumentsStart())
-		try{
-			const documents = await Axios.get('/documents.json').then(res=> res.data)
-			dispatch(fetchDocumentsOk(documents))
-		} catch (e) {
-			console.log('fetchDocuments error---:', e)	
-			dispatch(fetchDocumentsError(e))
-		}
-	}
-};
 
 export function postDocument(doc,formikActions,closeModalFn){
 	return async (dispatch) => {

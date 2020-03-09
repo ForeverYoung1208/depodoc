@@ -1,4 +1,5 @@
-import {RESET_DOCUMENTS, 
+import {
+  RESET_DOCUMENTS,
   FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_ERROR,
   POST_DOCUMENT_OK, POST_DOCUMENT_START, POST_DOCUMENT_ERROR
 } from '../actions/actionTypes';
@@ -7,17 +8,7 @@ import {RESET_DOCUMENTS,
 const initialState = {
 	documents: [],
   isLoading: false,
-  fetchErrorText: null,
-  voc:{
-    doctypes:[   
-      {"id":1,"name":"anketa1"},
-      {"id":2,"name":"many documents2"}
-    ],
-    faces:[
-      {"id":1,"name":"face1"},
-      {"id":2,"name":"face2"}
-    ]
-  }
+  fetchErrorText: null
 }
 
 

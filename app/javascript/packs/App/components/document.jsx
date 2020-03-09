@@ -6,12 +6,12 @@ function DocStateControls(props){
 	const {document, addNewStateModal} = props
 	return(
 		<React.Fragment>
-			{document.last_docstate &&
+			{document.last_docstate && 
 				<button 
 					className={classes['doc-btn-info'] +' btn btn-outline-info btn-sm p-0'}
 					onClick={() => console.log('doc history click', document.id)}
 				>
-					{document.last_docstate}
+					{document.last_docstate.name}
 				</button>
 			}
 

@@ -16,6 +16,6 @@ def at_companies
 end
 
 def last_docstate
-	docstate_changes.last && docstate_changes.last.to_state.name
+	docstate_changes.last && docstate_changes.last.to_state
 	
 end
