@@ -39,12 +39,13 @@ export default function Documents() {
 					<thead className = "thead-light">
 						<tr className = {classes["doctable-headers"]}>
 							<th>id</th>
-							<th>Тип документа</th>
-							<th>В компании</th>
-							<th>По лицу</th>
-							<th>Текущее состояние</th>
-							<th>В операциях</th>
-							<th>Примечаия</th>
+							<th>Тип документу</th>
+							<th>Назва</th>
+							<th>В компанії</th>
+							<th>По особі</th>
+							<th>Теперішній стан</th>
+							<th>В операціях</th>
+							<th>Примітки</th>
 						</tr>
 					</thead>
 					<tbody>

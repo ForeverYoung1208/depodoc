@@ -34,6 +34,7 @@ export default function Document(props){
 	return(
 		<tr>
 			<td className={classes['col-id']}>{document.id}</td>
+			<td>{document.doctype}</td>
 			<td>{document.name}</td>
 			<td>{document.companies.map( cmp => <span key={cmp.id}> {cmp.name}</span>)}	</td>
 			<td>{document.face.name}</td>

@@ -2,6 +2,7 @@
 
 
 json.id document.id
+json.doctype document.doctype.name
 json.name document.name
 json.note document.note
 json.created_at document.created_at.try(:strftime, "%Y-%m-%d")

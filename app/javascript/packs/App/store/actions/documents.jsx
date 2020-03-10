@@ -43,6 +43,7 @@ export function postDocument(doc,formikActions,closeModalFn){
 		dispatch(postDocumentStart())
 		try{
 			const csrfToken = document.getElementsByName("csrf-token")[0].getAttribute('content');	
+			console.log('[doc]', doc);
 
 			const savedDocument = await Axios.post(
 				'/documents.json', 

@@ -27,8 +27,6 @@ export default function vocReducer(state=initialState, action){
         ...action.voc,
       	isLoading: false
       }
-      console.log('[a]', a);
-      console.log('[action]', action);
       return {
         ...state,
         ...action.voc,

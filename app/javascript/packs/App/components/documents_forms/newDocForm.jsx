@@ -9,15 +9,20 @@ import { postDocument } from '../../store/actions/documents'
 export default function NewDocForm(props){
 	const {closeModalFn} = props
 	const dispatch = useDispatch()
-	const { doctypes, faces } = useSelector(state => state.voc)
+	const { doctypes, faces, docstates } = useSelector(state => state.voc)
+	
 	
 
 	function validatePresense(value) {
-	  let error
 	  if (!value) {
-	    error = 'Required';
+	    return 'Required';
 	  }
-	  return error;
+	}
+
+	function validateDocstate(value) {
+		if (!value || value===0) {
+			return 'Error - docstate is absent'
+		}
 	}
 
 
@@ -29,7 +34,8 @@ export default function NewDocForm(props){
 	      	doctype_id: doctypes[0].id,
 	      	name: '',
 	      	face_id: faces[0].id,
-	      	note:''
+					note:'',
+					docstate_id: docstates[0].id || 0
 				}}
 	      onSubmit={(documentValues, actions) => {
 					dispatch(postDocument(documentValues, actions, closeModalFn))
@@ -84,6 +90,20 @@ export default function NewDocForm(props){
 	            disabled={isSubmitting}
 	          >
 						</Input>
+
+						<Input
+		          as='select'
+	          	label="Початковий стан"
+	            type="text"
+							className='custom-select col-6'
+							name="docstate_id"
+							disabled={isSubmitting}
+							validate={validateDocstate} 
+	          >
+							{docstates.map( docstate => 
+								<option key={docstate.id} value={docstate.id}>{'(id '+docstate.id + '): ' +docstate.name}</option>
+							)}
+	          </Input>						
        	
 
 	          <button 
