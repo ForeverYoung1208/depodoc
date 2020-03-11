@@ -6,72 +6,66 @@ import Input from '../../UI/input'
 import { useDispatch, useSelector } from 'react-redux'
 import { postDocument } from '../../store/actions/documents'
 import { useParams } from 'react-router-dom'
+import useDocument from '../../hooks/useDocument'
 
 export default function NewDocStateForm() {
   
-  const states = [{id:1, name:'name1'},{id:2, name:'name2'},{id:3, name:'name3'},]
-  let {id:documentId} = useParams()
+  const {id:documentId} = useParams()
+  const document = useDocument(documentId)
+  const {docstates} = useSelector( state => state.voc )
   
-    return `Document ${documentId}`
+  // return `Document ${document.id}`
 
 
-  // return(
-  //   <div>
-  //   <Formik
-  //     initialValues={{ 
-  //       document: document,
-  //       state_id: 1,
-  //       newstate_id: 1
-  //     }}
-  //     onSubmit={(documentValues, actions) => {
-  //       console.log('[submit]', );
-  //       // dispatch(postDocument(documentValues, actions, closeModalFn))
-  //     }}
-  //   >
-  //     { ({isSubmitting, handleChange, values}) => (
+  return(
+  <div>
+    <Formik
+      initialValues={{ 
+        document: document,
+        newstate_id: 1
+      }}
+      onSubmit={(documentValues, actions) => {
+        console.log('[submit documentValues]', documentValues );
+        // dispatch(postDocument(documentValues, actions, closeModalFn))
+      }}
+    >
+      { ({isSubmitting, handleChange, values}) => (
 
-  //       <Form>
-  //         <h2>{values.document}</h2>
-  //         <Input
-  //           as='select'
-  //           label='Тип докуента'
-  //           type='text'
-  //           className='custom-select col-6'
-  //           validate={validatePresense} 
-  //           name="state_id"
-  //           disabled={isSubmitting}
-  //         >
-  //             {states.map( state => 
-  //               <option key={state.id} value={state.id}>{'(id '+state.id + '): ' +state.name}</option>
-  //             )}
-  //         </Input>
+        <Form>
+          { !values.document ? null : `
+            ${values.document.id}
+            ${values.document.doctype}
+            ${values.document.name}
+            ${values.document.note}
+            ${values.document.face.name}
+            ${values.document.last_docstate.name} (${values.document.last_docstate.id})
+          `}
 
-  //         <Input
-  //           as='select'
-  //           label='Тип докуента'
-  //           type='text'
-  //           className='custom-select col-6'
-  //           validate={validatePresense} 
-  //           name="state_id"
-  //           disabled={isSubmitting}
-  //         >
-  //             {states.map( state => 
-  //               <option key={state.id} value={state.id}>{'(id '+state.id + '): ' +state.name}</option>
-  //             )}
-  //         </Input>
-          
-  //         <button 
-  //           type="submit" 
-  //           className='btn btn-outline-primary m-1 ml-3' 
-  //           disabled={isSubmitting}
-  //         >
-  //           Submit
-  //         </button>
-  //         <Loader isLoading={isSubmitting}/>
-  //       </Form>
-  //     )}
-  //   </Formik>
-  // </div>
+          <Input
+            as='select'
+            label='Новий стан:'
+            type='text'
+            className='custom-select col-6'
+            name="new_state_id"
+            disabled={isSubmitting}
+          >
+              {docstates.map( state => 
+                <option key={state.id} value={state.id}>{'(id '+state.id + '): ' +state.name}</option>
+              )}
+          </Input>
+
+          <button 
+            type="submit" 
+            className='btn btn-outline-primary m-1 ml-3' 
+            disabled={isSubmitting}
+          >
+            Submit
+          </button>
+          <Loader isLoading={isSubmitting}/>
+        </Form>
+      )}
+    </Formik>
+  </div>
     
-  // )
+  )
 }

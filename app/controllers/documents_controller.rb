@@ -64,14 +64,29 @@ class DocumentsController < ApplicationController
 
   # DELETE /documents/1
   # DELETE /documents/1.json
+  # def destroy
+  #   @document.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   def destroy
-    @document.destroy
-    respond_to do |format|
-      format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
-      format.json { head :no_content }
+    # @document.destroy
+    if @document.update(deleted_at: DateTime.now)
+      respond_to do |format|
+        format.html { redirect_to documents_url, notice: 'document was marked as deleted.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to documents_url, notice: 'error deleting document.' }
+      format.json { render json: @document.errors, status: :unprocessable_entity }
     end
   end
 
+
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_document
