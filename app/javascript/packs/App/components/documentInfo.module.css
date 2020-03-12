@@ -1,0 +1,31 @@
+section{
+  border: solid gray 1px;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px 0;
+
+}
+
+.group {
+}
+
+.name {
+  display:inline-block;
+  width: 10rem;
+  background-color: #e9ecef;
+  color: black;
+  text-align: right;
+  border-radius: 3px;
+  border: solid 1px white;
+}
+
+.value{
+  display: inline-block;
+  padding-left: 1rem;
+  font-style: italic;
+  border-radius: 3px;
+  background-color: hsl(0, 0%, 98%);
+  border: solid 1px white;
+  width: calc(100% - 10rem);
+
+}

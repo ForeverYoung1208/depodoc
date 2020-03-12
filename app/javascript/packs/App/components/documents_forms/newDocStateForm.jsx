@@ -7,15 +7,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { postDocument } from '../../store/actions/documents'
 import { useParams } from 'react-router-dom'
 import useDocument from '../../hooks/useDocument'
+import DocumentInfo from '../documentInfo'
 
 export default function NewDocStateForm() {
   
   const {id:documentId} = useParams()
   const document = useDocument(documentId)
   const {docstates} = useSelector( state => state.voc )
+  const emptyDocument = {
+    id:'', doctype:'', name:'', note:'', face:'', last_docstate:{id:'', name:''}
+  }
   
-  // return `Document ${document.id}`
-
 
   return(
   <div>
@@ -32,15 +34,7 @@ export default function NewDocStateForm() {
       { ({isSubmitting, handleChange, values}) => (
 
         <Form>
-          { !values.document ? null : `
-            ${values.document.id}
-            ${values.document.doctype}
-            ${values.document.name}
-            ${values.document.note}
-            ${values.document.face.name}
-            ${values.document.last_docstate.name} (${values.document.last_docstate.id})
-          `}
-
+          <DocumentInfo document={values.document ? values.document : emptyDocument}></DocumentInfo>
           <Input
             as='select'
             label='Новий стан:'
