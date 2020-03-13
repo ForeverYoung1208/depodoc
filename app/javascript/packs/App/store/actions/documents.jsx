@@ -38,21 +38,23 @@ function fetchDocumentsError(error){
 }
 
 
-export function postDocument(doc,formikActions,closeModalFn){
+export function postDocument(docId, oldStateId, newStateId, formikActions, closeModalFn){
 	return async (dispatch) => {
 		dispatch(postDocumentStart())
 		try{
 			const csrfToken = document.getElementsByName("csrf-token")[0].getAttribute('content');	
-			console.log('[doc]', doc);
-
-			const savedDocument = await Axios.post(
-				'/documents.json', 
-				{document:{...doc}},   
+			const response = await Axios.post(
+				`/documents/${docId}/add_state.json`, 
+				{
+					oldStateId, 
+					newStateId
+				},   
 				{headers: {
 				'Content-Type': 'application/json',
 				'X-CSRF-Token': csrfToken
 			}})
-			dispatch(postDocumentOk(savedDocument.data, formikActions));
+			console.log('[response]', response)
+			dispatch(postDocumentOk(response.data, formikActions));
 			closeModalFn();
 		} catch (e) {
 			dispatch(postDocumentError(e, formikActions))
@@ -67,13 +69,13 @@ export function postDocumentStart() {
 	}
 }
 
-export function postDocumentOk(document, formikActions) {
-	console.log('[postDocumentOk document]', document);
+export function postDocumentOk(response, formikActions) {
+	console.log('[postDocumentOk response]', response);
 	formikActions.setSubmitting(false)	
 
 	return({
 	type: POST_DOCUMENT_OK,
-	document
+	// document
 	})	
 }
 

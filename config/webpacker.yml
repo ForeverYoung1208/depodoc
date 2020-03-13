@@ -61,13 +61,13 @@ development:
     https: false
 
 
-    host: localhost
-    port: 3035
-    public: localhost:3035
-
-    # host: 192.168.99.51
+    # host: localhost
     # port: 3035
-    # public: 192.168.99.51:3035
+    # public: localhost:3035
+
+    host: 192.168.99.51
+    port: 3035
+    public: 192.168.99.51:3035
 
 
     hmr: false

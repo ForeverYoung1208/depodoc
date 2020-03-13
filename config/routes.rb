@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
-  ### overriding and cancelling "resources" statement for frontend routes
+  ### overriding and cancelling "resources" statement for frontend routes,
+  ### redirecting to #index
   get 'documents/add', to: "documents#index"
   get 'documents/:id/new_state', to: "documents#index"
-
   ###^^^^
+
+  ### setting specific routes
+  post 'documents/:id/add_state', to: "documents#new_state"  
+  ###^^^^
+
 
   resources :logs
   resources :opstate_changes

@@ -21,13 +21,38 @@ class DocumentsController < ApplicationController
   def edit
   end
 
+
+############ TODO Move this part to DocstateChange controller!!!!
+  def new_state
+    document = Document.find(params[:id])
+    docstate_change = DocstateChange.new(
+      {
+        document: document,
+        from_state_id: params[:oldStateId],
+        to_state_id: params[:newStateId],
+        user_id: @current_user.id,
+        ###note: params[:note]
+
+      }
+    )
+
+    respond_to do |format|
+      if  docstate_change.save!
+        format.json { render json: docstate_change, status: :created }
+      else
+        format.json { render json: docstate_change.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
+
   # POST /documents
   # POST /documents.json
+
   def create
     @document = Document.new(document_params)
     new_docstate = Docstate.find(params[:document][:docstate_id])
-
-    
     docstate_change = DocstateChange.new(
       {
         document: @document,
@@ -36,7 +61,6 @@ class DocumentsController < ApplicationController
         user_id: @current_user.id
       }
     )
-    
     respond_to do |format|
       if @document.save! && docstate_change.save!
         format.html { redirect_to @document, notice: 'Document was successfully created.' }

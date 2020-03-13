@@ -30,6 +30,10 @@
 #### Ignore local env config
 /config/local_env.yml
 
+#### Ignore webpacker config
+/config/webpacker.yml
+
+
 /public/packs
 /public/packs-test
 /node_modules

@@ -9,9 +9,10 @@ import { useParams } from 'react-router-dom'
 import useDocument from '../../hooks/useDocument'
 import DocumentInfo from '../documentInfo'
 
-export default function NewDocStateForm() {
-  
-  const {id:documentId} = useParams()
+export default function NewDocStateForm(props) {
+  const {closeModalFn} = props   
+  const dispatch = useDispatch()
+  const {id:documentId} = useParams() //from router (url)
   const document = useDocument(documentId)
   const {docstates} = useSelector( state => state.voc )
   const emptyDocument = {
@@ -24,11 +25,11 @@ export default function NewDocStateForm() {
     <Formik
       initialValues={{ 
         document: document,
-        newstate_id: 1
+        newState_id: 1
       }}
-      onSubmit={(documentValues, actions) => {
-        console.log('[submit documentValues]', documentValues );
-        // dispatch(postDocument(documentValues, actions, closeModalFn))
+      onSubmit={(values, actions) => {
+        console.log('[submit values]', values );
+        dispatch(postDocument(values.document.id, +document.last_docstate.id, +values.newState_id, actions, closeModalFn))
       }}
     >
       { ({isSubmitting, handleChange, values}) => (
@@ -40,11 +41,11 @@ export default function NewDocStateForm() {
             label='Новий стан:'
             type='text'
             className='custom-select col-6'
-            name="new_state_id"
+            name="newState_id"
             disabled={isSubmitting}
           >
               {docstates.map( state => 
-                <option key={state.id} value={state.id}>{'(id '+state.id + '): ' +state.name}</option>
+                <option key={state.id} value={state.id}>{state.name + '(id '+state.id + ')'}</option>
               )}
           </Input>
 
