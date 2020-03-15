@@ -10,6 +10,7 @@ json.updated_at document.updated_at.try(:strftime, "%Y-%m-%d")
 json.last_docstate do
 	json.id document.last_docstate.try(:id)
 	json.name document.last_docstate.try(:name)
+	json.possible_changes document.last_docstate.possible_changes
 end
 json.face do
 	json.id document.face.id

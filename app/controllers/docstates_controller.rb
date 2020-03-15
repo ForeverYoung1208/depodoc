@@ -24,7 +24,13 @@ class DocstatesController < ApplicationController
   # POST /docstates
   # POST /docstates.json
   def create
-    @docstate = Docstate.new(docstate_params)
+
+    if docstate_params[:possible_changes].kind_of?(Array)
+      @docstate = Docstate.new(docstate_params)
+    else
+      @docstate = Docstate.new(docstate_params.except(:possible_changes))
+      @docstate[:possible_changes] = YAML.load(docstate_params[:possible_changes])
+    end
 
     respond_to do |format|
       if @docstate.save
@@ -40,8 +46,13 @@ class DocstatesController < ApplicationController
   # PATCH/PUT /docstates/1
   # PATCH/PUT /docstates/1.json
   def update
+    new_params = docstate_params
+    if !docstate_params[:possible_changes].kind_of?(Array)
+      new_params[:possible_changes] = YAML.load(docstate_params[:possible_changes])
+    end
+
     respond_to do |format|
-      if @docstate.update(docstate_params)
+      if @docstate.update(new_params)
         format.html { redirect_to @docstate, notice: 'Docstate was successfully updated.' }
         format.json { render :show, status: :ok, location: @docstate }
       else

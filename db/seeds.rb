@@ -96,6 +96,10 @@ opstates=[
 ]
 
 docstates=[
+	Docstate.where(id: -1).first_or_create({
+		name: 'відпрацьовано',
+		possible_changes: []
+	}),
 	Docstate.where(id: 1).first_or_create({
 		name: 'docstate1-2',
 		possible_changes: [2]

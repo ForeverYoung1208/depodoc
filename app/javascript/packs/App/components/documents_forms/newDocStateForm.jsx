@@ -8,6 +8,7 @@ import { postStateChange } from '../../store/actions/documents'
 import { useParams } from 'react-router-dom'
 import useDocument from '../../hooks/useDocument'
 import DocumentInfo from '../documentInfo'
+import {DOCUMENT_WORKED_OUT_ID} from '../../global_constatns'
 
 export default function NewDocStateForm(props) {
   const {closeModalFn} = props   
@@ -18,7 +19,11 @@ export default function NewDocStateForm(props) {
   const emptyDocument = {
     id:'', doctype:'', name:'', note:'', face:'', last_docstate:{id:'', name:''}
   }
-  
+
+  const enabledDocstates = docstates.filter(docstate =>{
+    return document.last_docstate.possible_changes.includes(docstate.id)
+  })
+
 
   return(
   <div>
@@ -42,8 +47,12 @@ export default function NewDocStateForm(props) {
             className='custom-select col-6'
             name="newState_id"
             disabled={isSubmitting}
+            onChange={(e)=> {
+              e.target.value === DOCUMENT_WORKED_OUT_ID ? alert('буде помічено як відпрацьований! Стан таких документів більше змінювати неможливо.') : null;
+              handleChange(e);
+            }}
           >
-              {docstates.map( state => 
+              {enabledDocstates.map( state => 
                 <option key={state.id} value={state.id}>{state.name + '(id '+state.id + ')'}</option>
               )}
           </Input>
