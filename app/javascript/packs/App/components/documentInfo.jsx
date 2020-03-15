@@ -11,7 +11,6 @@ function DocumentProperty(params){
 }
 
 export default function DocumentInfo(params) {
-  console.log('[params]', params);
   const {id, doctype, name, note, face, last_docstate} = params.document
 
   return(

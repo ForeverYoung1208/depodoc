@@ -47,8 +47,9 @@ export default function documentsReducer(state=initialState, action) {
       return{
         ...state,
         isLoading: false,
-        // documents: [...state.documents, action.document ]
+        documents: [...state.documents, action.document ]
       }
+      
       case POST_DOCUMENT_ERROR:
       return{
         ...state,

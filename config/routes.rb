@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   ###^^^^
 
   ### setting specific routes
-  post 'documents/:id/add_state', to: "documents#new_state"  
+  # post 'documents/:id/add_state', to: "documents#new_state"  
   ###^^^^
 
 

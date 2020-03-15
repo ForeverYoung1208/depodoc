@@ -21,10 +21,32 @@ class DocstateChangesController < ApplicationController
   def edit
   end
 
+
+  # def new_state
+  #   document = Document.find(params[:id])
+  #   docstate_change = DocstateChange.new(
+  #     {
+  #       document: document,
+  #       from_state_id: params[:oldStateId],
+  #       to_state_id: params[:newStateId],
+  #       user_id: @current_user.id,
+  #       ###note: params[:note]
+  #     }
+  #   )
+  #   respond_to do |format|
+  #     if  docstate_change.save!
+  #       format.json { render json: docstate_change, status: :created }
+  #     else
+  #       format.json { render json: docstate_change.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+
+  # end
+  
   # POST /docstate_changes
   # POST /docstate_changes.json
   def create
-    @docstate_change = DocstateChange.new(docstate_change_params)
+    @docstate_change = DocstateChange.new(docstate_change_params.merge({user_id: @current_user.id}))
 
     respond_to do |format|
       if @docstate_change.save
@@ -69,6 +91,6 @@ class DocstateChangesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def docstate_change_params
-      params.require(:docstate_change).permit(:document_id, :from_state_id, :to_state_id, :user_references, :note)
+      params.require(:docstate_change).permit(:document_id, :from_state_id, :to_state_id, :user_id, :note)
     end
 end

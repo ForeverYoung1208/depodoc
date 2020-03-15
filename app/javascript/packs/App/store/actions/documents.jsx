@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'axios'
+import Axios from '../../axios/customAxios'
 import {RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_ERROR,
 	POST_DOCUMENT_START, POST_DOCUMENT_OK, POST_DOCUMENT_ERROR
 } from './actionTypes';
@@ -7,6 +7,7 @@ import {RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUME
 export function fetchDocuments(){
 	return async (dispatch) => {
 		dispatch(fetchDocumentsStart())
+
 		try{
 			const documents = await Axios.get('/documents.json').then(res=> res.data)
 			dispatch(fetchDocumentsOk(documents))
@@ -38,23 +39,18 @@ function fetchDocumentsError(error){
 }
 
 
-export function postDocument(docId, oldStateId, newStateId, formikActions, closeModalFn){
+export function postStateChange(docId, oldStateId, newStateId, formikActions, closeModalFn){
 	return async (dispatch) => {
 		dispatch(postDocumentStart())
 		try{
-			const csrfToken = document.getElementsByName("csrf-token")[0].getAttribute('content');	
 			const response = await Axios.post(
-				`/documents/${docId}/add_state.json`, 
+				'/docstate_changes.json', 
 				{
-					oldStateId, 
-					newStateId
-				},   
-				{headers: {
-				'Content-Type': 'application/json',
-				'X-CSRF-Token': csrfToken
-			}})
-			console.log('[response]', response)
-			dispatch(postDocumentOk(response.data, formikActions));
+					document_id: docId,
+					from_state_id: oldStateId, 
+					to_state_id: newStateId
+				})
+			dispatch(fetchDocuments());
 			closeModalFn();
 		} catch (e) {
 			dispatch(postDocumentError(e, formikActions))
@@ -63,19 +59,40 @@ export function postDocument(docId, oldStateId, newStateId, formikActions, close
 	}
 };
 
+
+export function postDocument(doc,formikActions,closeModalFn){
+	return async (dispatch) => {
+		dispatch(postDocumentStart())
+		try{
+			const savedDocument = await Axios.post(
+				'/documents.json', 
+				{document:{...doc}}
+			)
+			dispatch(postDocumentOk(savedDocument.data, formikActions));
+			closeModalFn();
+		} catch (e) {
+			dispatch(postDocumentError(e, formikActions))
+			closeModalFn();			
+		}
+	}
+};
+
+
+
 export function postDocumentStart() {
 	return {
 		type: POST_DOCUMENT_START
 	}
 }
 
-export function postDocumentOk(response, formikActions) {
-	console.log('[postDocumentOk response]', response);
+export function postDocumentOk(document, formikActions) {
+	console.log('[postDocumentOk document]', document);
+
 	formikActions.setSubmitting(false)	
 
 	return({
 	type: POST_DOCUMENT_OK,
-	// document
+	document
 	})	
 }
 

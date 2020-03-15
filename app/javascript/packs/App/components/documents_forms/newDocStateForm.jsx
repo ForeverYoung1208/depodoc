@@ -4,7 +4,7 @@ import classes from './newDocStateForm.module.css'
 import Loader from '../../UI/loader'
 import Input from '../../UI/input'
 import { useDispatch, useSelector } from 'react-redux'
-import { postDocument } from '../../store/actions/documents'
+import { postStateChange } from '../../store/actions/documents'
 import { useParams } from 'react-router-dom'
 import useDocument from '../../hooks/useDocument'
 import DocumentInfo from '../documentInfo'
@@ -28,8 +28,7 @@ export default function NewDocStateForm(props) {
         newState_id: 1
       }}
       onSubmit={(values, actions) => {
-        console.log('[submit values]', values );
-        dispatch(postDocument(values.document.id, +document.last_docstate.id, +values.newState_id, actions, closeModalFn))
+        dispatch(postStateChange(values.document.id, +document.last_docstate.id, +values.newState_id, actions, closeModalFn))
       }}
     >
       { ({isSubmitting, handleChange, values}) => (
