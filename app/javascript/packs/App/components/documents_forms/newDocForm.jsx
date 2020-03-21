@@ -39,7 +39,7 @@ export default function NewDocForm(props){
 					name: '',
 					face_id: faces[0].id,
 					note:'',
-					docstate_id: docstates[0].id || 0
+					docstate_id: startingDocstates[0].id || 0
 				}}
 				onSubmit={(documentValues, actions) => {
 					dispatch(postDocument(documentValues, actions, closeModalFn))

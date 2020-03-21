@@ -4,7 +4,9 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 
 import {fetchDocuments, resetDocuments} from '../store/actions/documents';
 
-import {redirectToDocuments, redirectToNewDocModal, redirectToNewStateModal} from '../routes'
+import {redirectToDocuments, redirectToNewDocModal, redirectToNewStateModal,
+	NewDocModal_path,	NewStateModal_path
+} from '../routes'
 
 import classes from './documents.module.css';
 import Modal from '../UI/modal';
@@ -61,19 +63,21 @@ export default function Documents() {
 				</table>
 
 				<Switch>
-					<Route path={'/documentsApp/add'}>
+					<Route path={NewDocModal_path}>
 						<Modal 
 							closeModalFn={()=>redirectToDocuments(history)}
-							caption='Новий документ'>
+							caption='Новий документ'
+						>
 							<NewDocForm closeModalFn={()=>redirectToDocuments(history)}/>
 						</Modal>
 					</Route>
 
-					<Route path={'/documentsApp/:id/new_state'}>
+					<Route path={NewStateModal_path}>
 						<Modal
 							closeModalFn={()=>redirectToDocuments(history)}
-							caption='Новий стан документа'>
-								<NewDocStateForm closeModalFn={()=>redirectToDocuments(history)}/>
+							caption='Новий стан документа'
+						>
+							<NewDocStateForm closeModalFn={()=>redirectToDocuments(history)}/>
 						</Modal>
 					</Route>
 				</Switch>

@@ -6,6 +6,7 @@ import Operations from './pages/operations'
 import { useDispatch, useSelector} from "react-redux";
 import { fetchVoc } from './store/actions/voc'
 
+
 export const MainRoutes = () => {
 	const dispatch = useDispatch();
   useEffect(()=> {
@@ -25,12 +26,15 @@ export const MainRoutes = () => {
 	)
 }
 
+export const NewStateModal_path = '/documentsApp/:id/new_state'
 export function redirectToNewStateModal(history, documentId) {
-	history.push(`/documentsApp/${documentId}/new_state`)
+	const NewStateModal_path_actual = NewStateModal_path.replace(':id', documentId)
+	history.push(NewStateModal_path_actual)
 }
 
+export const NewDocModal_path = '/documentsApp/add'
 export function redirectToNewDocModal(history) {
-	history.push('/documentsApp/add')
+	history.push(NewDocModal_path)
 }
 
 export function redirectToDocuments(history) {
