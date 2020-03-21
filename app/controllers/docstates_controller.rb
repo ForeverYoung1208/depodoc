@@ -34,7 +34,7 @@ class DocstatesController < ApplicationController
 
     respond_to do |format|
       if @docstate.save
-        format.html { redirect_to @docstate, notice: 'Docstate was successfully created.' }
+        format.html { redirect_to docstates_url, notice: 'Docstate was successfully created.' }
         format.json { render :show, status: :created, location: @docstate }
       else
         format.html { render :new }
@@ -53,7 +53,7 @@ class DocstatesController < ApplicationController
 
     respond_to do |format|
       if @docstate.update(new_params)
-        format.html { redirect_to @docstate, notice: 'Docstate was successfully updated.' }
+        format.html { redirect_to docstates_url, notice: 'Docstate was successfully updated.' }
         format.json { render :show, status: :ok, location: @docstate }
       else
         format.html { render :edit }

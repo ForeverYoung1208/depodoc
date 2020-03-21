@@ -39,7 +39,7 @@ function fetchDocumentsError(error){
 }
 
 
-export function postStateChange(docId, oldStateId, newStateId, formikActions, closeModalFn){
+export function postStateChange(docId, oldStateId, newStateId, note, formikActions, closeModalFn){
 	return async (dispatch) => {
 		dispatch(postDocumentStart())
 		try{
@@ -48,7 +48,8 @@ export function postStateChange(docId, oldStateId, newStateId, formikActions, cl
 				{
 					document_id: docId,
 					from_state_id: oldStateId, 
-					to_state_id: newStateId
+					to_state_id: newStateId,
+					note
 				})
 			dispatch(fetchDocuments());
 			closeModalFn();

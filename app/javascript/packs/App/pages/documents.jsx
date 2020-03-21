@@ -45,7 +45,7 @@ export default function Documents() {
 							<th>По особі</th>
 							<th>Теперішній стан</th>
 							<th>В операціях</th>
-							<th>Примітки</th>
+							<th>Примітки Документа</th>
 						</tr>
 					</thead>
 					<tbody>

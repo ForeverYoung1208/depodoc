@@ -1,1 +1,1 @@
-json.extract! doctype, :id, :name
+json.extract! doctype, :id, :name, :isComplex

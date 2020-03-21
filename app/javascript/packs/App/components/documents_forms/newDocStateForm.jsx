@@ -21,19 +21,21 @@ export default function NewDocStateForm(props) {
   }
 
   const enabledDocstates = docstates.filter(docstate =>{
-    return document.last_docstate.possible_changes.includes(docstate.id)
+    return document.last_docstate.possible_changes.includes(docstate.id)|| docstate.id === document.last_docstate.id
   })
-
 
   return(
   <div>
     <Formik
       initialValues={{ 
         document: document,
-        newState_id: 1
+        newState_id: document.last_docstate.id,
+        note: ''
       }}
       onSubmit={(values, actions) => {
-        dispatch(postStateChange(values.document.id, +document.last_docstate.id, +values.newState_id, actions, closeModalFn))
+        
+
+        dispatch(postStateChange(values.document.id, +document.last_docstate.id, +values.newState_id, values.note, actions, closeModalFn))
       }}
     >
       { ({isSubmitting, handleChange, values}) => (
@@ -56,6 +58,17 @@ export default function NewDocStateForm(props) {
                 <option key={state.id} value={state.id}>{state.name + '(id '+state.id + ')'}</option>
               )}
           </Input>
+          
+          <Input
+            as='textarea'
+            className='col-6'
+            label='Примітки:'
+            name='note'
+            disabled={isSubmitting}
+          >
+
+          </Input>
+          
 
           <button 
             type="submit" 

@@ -68,10 +68,13 @@ optypes=[
 ]
 doctypes=[
 	Doctype.where(id: 1).first_or_create({
-		name: 'anketa1'
+		name: 'Анкета'
 	}),
 	Doctype.where(id: 2).first_or_create({
-		name: 'many documents2'
+		name: 'Довіренність'
+	}),
+	Doctype.where(id: 3).first_or_create({
+		name: 'Пакет на відкриття рахунку'
 	}),
 ]
 
@@ -101,22 +104,29 @@ docstates=[
 		possible_changes: []
 	}),
 	Docstate.where(id: 1).first_or_create({
-		name: 'docstate1-2',
+		name: 'Отримання',
 		possible_changes: [2]
 	}),
 	Docstate.where(id: 2).first_or_create({
-		name: 'docstate2-3',
+		name: 'Реєстрація',
 		possible_changes: [3]
 	}),	
 	Docstate.where(id: 3).first_or_create({
-		name: 'docstate3-2,4',
-		possible_changes: [2,4]
+		name: 'Опрацювання',
+		possible_changes: [4]
 	}),
-	Docstate.where(id: 3).first_or_create({
-		name: 'docstate4-1',
-		possible_changes: [1]
+	Docstate.where(id: 4).first_or_create({
+		name: 'Перевірка',
+		possible_changes: [3,5]
+	}),
+	Docstate.where(id: 5).first_or_create({
+		name: 'відповідь',
+		possible_changes: [3,-1]
 	})
+
 ]
+
+
 
 
 

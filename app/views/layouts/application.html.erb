@@ -39,6 +39,7 @@
                           'Ролі' => [roles_path, @current_user.can_edit_roles?],
                           'Особи' => [faces_path, @current_user.can_edit_faces?],
                           'Стан документа' => [docstates_path, @current_user.can_edit_docstates?],
+                          'Типи документів' =>[doctypes_path, @current_user.can_edit_docstates?]
                         }
           }) {"Налаштування"}  %>
 

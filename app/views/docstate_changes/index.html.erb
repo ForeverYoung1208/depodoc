@@ -20,7 +20,7 @@
         <td><%= docstate_change.document_id %></td>
         <td><%= docstate_change.from_state_id %></td>
         <td><%= docstate_change.to_state_id %></td>
-        <td><%= docstate_change.user_references %></td>
+        <td><%= docstate_change.user.name %></td>
         <td><%= docstate_change.note %></td>
         <td><%= link_to 'Show', docstate_change %></td>
         <td><%= link_to 'Edit', edit_docstate_change_path(docstate_change) %></td>

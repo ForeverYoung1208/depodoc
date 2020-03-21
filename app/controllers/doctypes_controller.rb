@@ -28,7 +28,7 @@ class DoctypesController < ApplicationController
 
     respond_to do |format|
       if @doctype.save
-        format.html { redirect_to @doctype, notice: 'Doctype was successfully created.' }
+        format.html { redirect_to doctypes_url, notice: 'Doctype was successfully created.' }
         format.json { render :show, status: :created, location: @doctype }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DoctypesController < ApplicationController
   def update
     respond_to do |format|
       if @doctype.update(doctype_params)
-        format.html { redirect_to @doctype, notice: 'Doctype was successfully updated.' }
+        format.html { redirect_to doctypes_url, notice: 'Doctype was successfully updated.' }
         format.json { render :show, status: :ok, location: @doctype }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class DoctypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doctype_params
-      params.require(:doctype).permit(:name)
+      params.require(:doctype).permit(:name, :isComplex)
     end
 end

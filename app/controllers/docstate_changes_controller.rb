@@ -21,27 +21,6 @@ class DocstateChangesController < ApplicationController
   def edit
   end
 
-
-  # def new_state
-  #   document = Document.find(params[:id])
-  #   docstate_change = DocstateChange.new(
-  #     {
-  #       document: document,
-  #       from_state_id: params[:oldStateId],
-  #       to_state_id: params[:newStateId],
-  #       user_id: @current_user.id,
-  #       ###note: params[:note]
-  #     }
-  #   )
-  #   respond_to do |format|
-  #     if  docstate_change.save!
-  #       format.json { render json: docstate_change, status: :created }
-  #     else
-  #       format.json { render json: docstate_change.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-
-  # end
   
   # POST /docstate_changes
   # POST /docstate_changes.json
@@ -50,7 +29,8 @@ class DocstateChangesController < ApplicationController
 
     respond_to do |format|
       if @docstate_change.save
-        format.html { redirect_to @docstate_change, notice: 'Docstate change was successfully created.' }
+        # format.html { redirect_to @docstate_change, notice: 'Docstate change was successfully created.' }
+        format.html { redirect_to docstate_changes_url, notice: 'Docstate change was successfully created.' }
         format.json { render :show, status: :created, location: @docstate_change }
       else
         format.html { render :new }
@@ -64,7 +44,8 @@ class DocstateChangesController < ApplicationController
   def update
     respond_to do |format|
       if @docstate_change.update(docstate_change_params)
-        format.html { redirect_to @docstate_change, notice: 'Docstate change was successfully updated.' }
+        # format.html { redirect_to @docstate_change, notice: 'Docstate change was successfully updated.' }
+        format.html { redirect_to docstate_changes_url, notice: 'Docstate change was successfully updated.' }
         format.json { render :show, status: :ok, location: @docstate_change }
       else
         format.html { render :edit }

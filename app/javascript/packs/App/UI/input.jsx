@@ -6,7 +6,7 @@ export default function Input(props){
 
 	const {children, name, label, ...otherProps} = props
 	return(
-		<div className="input-group mb-3">
+		<div className="input-group mb-3" >
 			<div className="input-group-prepend">
 	    	<label className={classes['label']+" input-group-text"} htmlFor={name}>
 	    		{label}
@@ -18,7 +18,9 @@ export default function Input(props){
 	    >
 	    	{children}
 	    </Field>
-      <ErrorMessage name={name}/>
+			<ErrorMessage name={name}>
+				{msg => <div className={classes['errorMessage']}> {msg} </div>}
+			</ErrorMessage>
 	  </div>
 	)
 }
