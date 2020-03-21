@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   ### overriding and cancelling "resources" statement for frontend routes,
-  ### redirecting to #index
-  get 'documents/add', to: "documents#index"
-  get 'documents/:id/new_state', to: "documents#index"
+  ### redirecting to #documentsApp
+  get 'documentsApp/add', to: "documents#documentsApp"
+  get 'documentsApp/:id/new_state', to: "documents#documentsApp"
   ###^^^^
 
   ### setting specific routes
-  # post 'documents/:id/add_state', to: "documents#new_state"  
+  get 'documentsApp', to: "documents#documentsApp", as: 'documentsApp'
   ###^^^^
 
 

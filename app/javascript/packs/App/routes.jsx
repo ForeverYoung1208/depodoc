@@ -14,7 +14,7 @@ export const MainRoutes = () => {
 	
 	return (
 		<Switch>
-	    <Route path="/documents"	>
+	    <Route path="/documentsApp"	>
 	      <Documents />
 	    </Route>
 	    <Route path="/operations"	>
@@ -26,13 +26,13 @@ export const MainRoutes = () => {
 }
 
 export function redirectToNewStateModal(history, documentId) {
-	history.push(`/documents/${documentId}/new_state`)
+	history.push(`/documentsApp/${documentId}/new_state`)
 }
 
 export function redirectToNewDocModal(history) {
-	history.push('/documents/new')
+	history.push('/documentsApp/add')
 }
 
 export function redirectToDocuments(history) {
-	history.push('/documents');
+	history.push('/documentsApp');
 }

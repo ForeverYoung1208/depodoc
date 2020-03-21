@@ -60,7 +60,7 @@ export default function NewDocForm(props){
 						>
 								{doctypes.map( doctype => 
 									<option key={doctype.id} value={doctype.id}>
-										{'(id '+doctype.id + '): ' +doctype.name + ' ' + (doctype.isComplex ? 'Пакет документів' : '') }
+										{ `id ${doctype.id}): ${doctype.name} ${doctype.isComplex ? '- Пакет документів':''}` }
 									</option>
 								)}
 						</Input>

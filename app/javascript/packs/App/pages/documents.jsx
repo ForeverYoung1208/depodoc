@@ -61,7 +61,7 @@ export default function Documents() {
 				</table>
 
 				<Switch>
-					<Route path={'/documents/add'}>
+					<Route path={'/documentsApp/add'}>
 						<Modal 
 							closeModalFn={()=>redirectToDocuments(history)}
 							caption='Новий документ'>
@@ -69,7 +69,7 @@ export default function Documents() {
 						</Modal>
 					</Route>
 
-					<Route path={`/documents/:id/new_state`}>
+					<Route path={'/documentsApp/:id/new_state'}>
 						<Modal
 							closeModalFn={()=>redirectToDocuments(history)}
 							caption='Новий стан документа'>

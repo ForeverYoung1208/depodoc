@@ -1,6 +1,12 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
+  # GET /documentsApp
+  def documensApp
+    @documents = Document.all
+  end
+
+  
   # GET /documents
   # GET /documents.json
   def index

@@ -41,7 +41,7 @@ export default function Document(props){
 			<td><DocStateControls document={document} addNewStateModal={addNewStateModal} />	</td>
 			<td>{document.operations.map( op => (
 						<Link to={`/operations/${op.id}`} key={op.id+Math.random()}> 
-							{op.name}
+							{op.name+ ' '}
 						</Link>)
 					)}	
 			</td>

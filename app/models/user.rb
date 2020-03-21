@@ -94,9 +94,16 @@ class User < Tm2Record
     is_admin
   end
 
+  def can_edit_docstypes?
+    true
+  end
 
   def can_edit_faces?
     true
+  end
+
+  def can_tune_documents?
+    roles.pluck(:name).include?('can_tune_documents')
   end
 
 
