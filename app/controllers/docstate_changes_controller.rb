@@ -72,6 +72,7 @@ class DocstateChangesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def docstate_change_params
+      debugger
       params.require(:docstate_change).permit(:document_id, :from_state_id, :to_state_id, :user_id, :note)
     end
 end

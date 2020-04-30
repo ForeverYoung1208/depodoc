@@ -21,6 +21,8 @@ class DocumentsController < ApplicationController
   # GET /documents/new
   def new
     @document = Document.new
+    # @document.creator_id = @current_user.id
+    # @document.creator_name = @current_user.name + "(id: #{@current_user.id})"
   end
 
   # GET /documents/1/edit
@@ -31,7 +33,11 @@ class DocumentsController < ApplicationController
   # POST /documents.json
 
   def create
-    @document = Document.new(document_params)
+    document_params_with_creator = document_params.merge({
+      creator_id: @current_user.id,
+      creator_name: "#{@current_user.name} (id: #{@current_user.id})"
+    })
+    @document = Document.new(document_params_with_creator)
     new_docstate = Docstate.find(params[:document][:docstate_id])
     docstate_change = DocstateChange.new(
       {

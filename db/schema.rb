@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_21_192224) do
+ActiveRecord::Schema.define(version: 2020_04_30_184524) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_03_21_192224) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "doctype_id", null: false
     t.datetime "deleted_at"
+    t.string "creator_name"
+    t.bigint "creator_id", null: false
     t.index ["doctype_id"], name: "index_documents_on_doctype_id"
     t.index ["face_id"], name: "index_documents_on_face_id"
   end
