@@ -8,6 +8,8 @@ import { fetchVoc } from './store/actions/voc'
 
 
 export const MainRoutes = () => {
+		
+	// 
 	const dispatch = useDispatch();
   useEffect(()=> {
   	dispatch(fetchVoc())
@@ -39,4 +41,10 @@ export function redirectToNewDocModal(history) {
 
 export function redirectToDocuments(history) {
 	history.push('/documentsApp');
+}
+
+// -----------------------
+export const NewFaceModal_path = '/documentsApp/face/add'
+export function redirectToNewFaceModal(history) {
+	history.push(NewFaceModal_path)
 }

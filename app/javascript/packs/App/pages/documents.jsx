@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { Switch, Route, useHistory } from 'react-router-dom';
 
-import {fetchDocuments, resetDocuments} from '../store/actions/documents';
+import {fetchDocuments} from '../store/actions/documents';
 
 import {redirectToDocuments, redirectToNewDocModal, redirectToNewStateModal,
 	NewDocModal_path,	NewStateModal_path

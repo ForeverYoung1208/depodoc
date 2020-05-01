@@ -26,18 +26,18 @@ export function fetchVoc(){
 	}
 };
 
-export function fetchVocStart(){
+function fetchVocStart(){
 	return {
 		type: FETCH_VOC_START
 	}  
 }
-export function fetchVocOk(voc){
+function fetchVocOk(voc){
 	return {
     type: FETCH_VOC_OK,
     voc
 	}    
 }
-export function fetchVocError(error){
+function fetchVocError(error){
 	return {
     type: FETCH_VOC_ERROR,
     error

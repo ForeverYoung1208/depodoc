@@ -1,11 +1,15 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Formik, Form, Field, ErrorMessage, useFormik, useFormikContext } from 'formik'
-import classes from './newDocForm.module.css'
+
 import Loader from '../../UI/loader'
 import Input from '../../UI/input'
-import { useDispatch, useSelector } from 'react-redux'
 import { postDocument } from '../../store/actions/documents'
+
 import { STARTING_DOCSTATE_IDS } from '../../global_constatns'
+import { redirectToNewFaceModal } from '../../routes';
+
+import classes from './newDocForm.module.scss'
 
 export default function NewDocForm(props){
 	const {closeModalFn} = props
@@ -54,7 +58,8 @@ export default function NewDocForm(props){
 							as='select'
 							label='Тип докуента'
 							type='text'
-							className='custom-select col-8'
+							groupClassName="col-12"							
+							inputClassName='custom-select'
 							name="doctype_id"
 							disabled={isSubmitting}
 						>
@@ -69,7 +74,7 @@ export default function NewDocForm(props){
 							type="text"
 							label="Назва документа"
 							name="name"
-							className='col-8'
+							groupClassName="col-12"							
 							validate={validatePresense} 
 							disabled={isSubmitting}
 						/>
@@ -78,7 +83,7 @@ export default function NewDocForm(props){
 							type="text"
 							name="note"
 							label="Примітки"
-							className='col-8'
+							groupClassName="col-12"							
 							disabled={isSubmitting}
 						>
 						</Input>
@@ -87,14 +92,24 @@ export default function NewDocForm(props){
 							as='select'
 							label="Належить особі"
 							type="text"
-							className='custom-select col-8'
+							groupClassName={"col-10 " + classes['short']}
+							inputClassName='custom-select'
 							name="face_id"
 							disabled={isSubmitting}
 						>
 							{faces.map( face => 
 								<option key={face.id} value={face.id}>{'(id '+face.id + '): ' +face.name}</option>
 							)}
-						</Input>							
+						</Input>		
+
+						<button 
+							className='btn btn-outline-primary m-1 ml-3'
+							onClick={ ()=>redirectToNewFaceModal(history) }
+						>
+							<i className="fas fa-plus"></i>
+						</button>
+
+
 
 
 
@@ -102,7 +117,8 @@ export default function NewDocForm(props){
 							as='select'
 							label="Початковий стан"
 							type="text"
-							className='custom-select col-8'
+							groupClassName="col-12"							
+							inputClassName='custom-select'
 							name="docstate_id"
 							disabled={isSubmitting}
 						>

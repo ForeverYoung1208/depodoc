@@ -1,19 +1,23 @@
 import React from 'react'
-import classes from './modal.module.css'
+import PT from 'prop-types';
 import ReactModal from 'react-modal';
+import classes from './modal.module.css'
 
 function Modal(props) {
 	const {closeModalFn, caption} = props
   const isModalShowing = true; 
 
   return(
-
         <ReactModal 
            isOpen={isModalShowing}
            contentLabel="onRequestClose Example"
-           onRequestClose={()=>console.log('......... onRequestClose ........')}
-           className={classes["Modal"]}
-           overlayClassName={classes["Overlay"]}
+           onRequestClose={
+            //  ()=>console.log('......... onRequestClose ........')
+              closeModalFn
+            }
+          //  className={classes["Modal"]}
+          //  overlayClassName={classes["Overlay"]}
+           shouldCloseOnOverlayClick={false}
         >
 
           <div className={classes['header']}>
@@ -28,5 +32,8 @@ function Modal(props) {
 	)
 }
 
-
+Modal.propTypes = {
+  closeModalFn: PT.func.isRequired,
+  caption: PT.string
+};
 export default Modal

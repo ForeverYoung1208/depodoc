@@ -7,6 +7,7 @@ json.name document.name
 json.note document.note
 json.created_at document.created_at.try(:strftime, "%Y-%m-%d")
 json.updated_at document.updated_at.try(:strftime, "%Y-%m-%d")
+json.creator_name document.creator_name
 json.last_docstate do
 	json.id document.last_docstate.try(:id)
 	json.name document.last_docstate.try(:name)

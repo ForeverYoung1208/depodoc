@@ -1,4 +1,5 @@
 import React from 'react'
+import PT from "prop-types";
 import classes from './buttonRefresh.module.css'
 
 export default function ButtonRefresh(props) {
@@ -11,3 +12,7 @@ export default function ButtonRefresh(props) {
 		</button>
 	)
 }
+
+ButtonRefresh.propTypes = {
+		onClick: PT.func
+};
