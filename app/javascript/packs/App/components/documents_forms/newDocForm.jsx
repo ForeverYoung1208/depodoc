@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Formik, Form, Field, ErrorMessage, useFormik, useFormikContext } from 'formik'
+import { useHistory } from 'react-router-dom';
 
 import Loader from '../../UI/loader'
 import Input from '../../UI/input'
@@ -14,11 +15,11 @@ import classes from './newDocForm.module.scss'
 export default function NewDocForm(props){
 	const {closeModalFn} = props
 	const dispatch = useDispatch()
+	const history = useHistory()
 	const { doctypes, faces, docstates } = useSelector(state => state.voc)
+
 	const startingDocstates = docstates.filter(ds => STARTING_DOCSTATE_IDS.includes(ds.id) )
 	const complexDoctypeIds = doctypes.map(doctype => doctype.isComplex ? doctype.id : null )
-
-	
 	
 	function validatePresense(value) {
 		if (!value) {
@@ -103,15 +104,12 @@ export default function NewDocForm(props){
 						</Input>		
 
 						<button 
+							type="button"
 							className='btn btn-outline-primary m-1 ml-3'
 							onClick={ ()=>redirectToNewFaceModal(history) }
 						>
 							<i className="fas fa-plus"></i>
 						</button>
-
-
-
-
 
 						<Input
 							as='select'
@@ -139,10 +137,8 @@ export default function NewDocForm(props){
 					</Form>
 				)}
 			</Formik>
+
 		</div>
-
-
-
 
 
 	)

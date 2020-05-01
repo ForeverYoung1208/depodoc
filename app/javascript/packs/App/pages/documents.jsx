@@ -5,7 +5,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import {fetchDocuments} from '../store/actions/documents';
 
 import {redirectToDocuments, redirectToNewDocModal, redirectToNewStateModal,
-	NewDocModal_path,	NewStateModal_path
+	NewDocModal_path,	NewStateModal_path, NewFaceModal_path
 } from '../routes'
 
 import classes from './documents.module.css';
@@ -13,8 +13,10 @@ import Modal from '../UI/modal';
 import Loader from '../UI/loader';
 import DocsStatusBar from '../components/docsStatusBar';
 import Document from '../components/document';
+
 import NewDocForm from '../components/documents_forms/newDocForm';
 import NewDocStateForm from '../components/documents_forms/newDocStateForm';
+import NewFaceForm from '../components/faces/newFaceForm';
 
 
 export default function Documents() {
@@ -80,6 +82,16 @@ export default function Documents() {
 							<NewDocStateForm closeModalFn={()=>redirectToDocuments(history)}/>
 						</Modal>
 					</Route>
+
+					<Route path={NewFaceModal_path}>
+						<Modal
+							closeModalFn={()=>console.log('close new face dialog!')}
+							caption='Нова особа'
+						>
+							<NewFaceForm closeModalFn={()=>console.log('close new face dialog!')}/>
+						</Modal>
+					</Route>
+
 				</Switch>
 
 
