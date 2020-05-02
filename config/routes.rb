@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ### overriding and cancelling "resources" statement for frontend routes,
   ### redirecting to #documentsApp
   get 'documentsApp/add', to: "documents#documentsApp"
+  get 'documentsApp/add/face/add', to: "documents#documentsApp"
   get 'documentsApp/:id/new_state', to: "documents#documentsApp"
   ###^^^^
 

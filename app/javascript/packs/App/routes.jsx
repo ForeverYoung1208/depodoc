@@ -44,7 +44,7 @@ export function redirectToDocuments(history) {
 }
 
 // -----------------------
-export const NewFaceModal_path = '/documentsApp/face/add'
+export const NewFaceModal_path = '/documentsApp/add/face/add'
 export function redirectToNewFaceModal(history) {
 	history.push(NewFaceModal_path)
 }

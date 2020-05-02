@@ -7,3 +7,8 @@
   display: inline-block;
 
 }
+
+input[type="checkbox"] {
+  height: 25px;
+  margin: auto 0;  
+}

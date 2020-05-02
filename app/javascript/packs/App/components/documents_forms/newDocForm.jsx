@@ -1,14 +1,17 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Formik, Form, Field, ErrorMessage, useFormik, useFormikContext } from 'formik'
-import { useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
+import { Formik, Form, Field, ErrorMessage, useFormik, useFormikContext } from 'formik'
+
+import Modal from '../../UI/modal';
+import NewFaceForm from "../faces/newFaceForm";
 import Loader from '../../UI/loader'
 import Input from '../../UI/input'
 import { postDocument } from '../../store/actions/documents'
 
 import { STARTING_DOCSTATE_IDS } from '../../global_constatns'
-import { redirectToNewFaceModal } from '../../routes';
+import { redirectToNewFaceModal, NewFaceModal_path } from '../../routes';
 
 import classes from './newDocForm.module.scss'
 
@@ -137,6 +140,17 @@ export default function NewDocForm(props){
 					</Form>
 				)}
 			</Formik>
+
+			<Route path={NewFaceModal_path}>
+				<Modal
+					closeModalFn={()=>history.goBack()}
+					caption='Нова особа'
+					level= {1}
+				>
+					<NewFaceForm closeModalFn={()=>history.goBack()}/>
+				</Modal>
+			</Route>
+
 
 		</div>
 

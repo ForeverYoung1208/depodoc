@@ -4,17 +4,22 @@ import ReactModal from 'react-modal';
 import classes from './modal.module.css'
 
 function Modal(props) {
-	const {closeModalFn, caption} = props
+	const {closeModalFn, caption, level=0} = props
   const isModalShowing = true; 
 
   return(
         <ReactModal 
-           isOpen={isModalShowing}
-           contentLabel="onRequestClose Example"
-           onRequestClose={
-            //  ()=>console.log('......... onRequestClose ........')
-              closeModalFn
+          style={{
+            content: {
+              transform: `translate(${10*level}px, ${10*level}px )`
             }
+          }}
+          isOpen={isModalShowing}
+          contentLabel="onRequestClose Example"
+          onRequestClose={
+          //  ()=>console.log('......... onRequestClose ........')
+            closeModalFn
+          }
           //  className={classes["Modal"]}
           //  overlayClassName={classes["Overlay"]}
            shouldCloseOnOverlayClick={false}
@@ -34,6 +39,7 @@ function Modal(props) {
 
 Modal.propTypes = {
   closeModalFn: PT.func.isRequired,
-  caption: PT.string
+  caption: PT.string,
+  level: PT.number
 };
 export default Modal

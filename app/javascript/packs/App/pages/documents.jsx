@@ -83,15 +83,6 @@ export default function Documents() {
 						</Modal>
 					</Route>
 
-					<Route path={NewFaceModal_path}>
-						<Modal
-							closeModalFn={()=>console.log('close new face dialog!')}
-							caption='Нова особа'
-						>
-							<NewFaceForm closeModalFn={()=>console.log('close new face dialog!')}/>
-						</Modal>
-					</Route>
-
 				</Switch>
 
 

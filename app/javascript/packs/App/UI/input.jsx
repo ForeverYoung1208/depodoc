@@ -30,6 +30,8 @@ export default function Input(props){
 Input.propTypes = {
 	children: PT.oneOfType([PT.object, PT.array]),
 	name: PT.string,
-	label: PT.string
+	label: PT.string,
+	groupClassName: PT.string,
+	inputClassName: PT.string
 
 };
