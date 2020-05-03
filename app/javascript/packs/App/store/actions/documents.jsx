@@ -5,10 +5,12 @@ import {RESET_DOCUMENTS, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_OK, FETCH_DOCUME
 } from './actionTypes';
 
 export function fetchDocuments(){
+	// return async (dispatch, getState) => {     //its possible to access store from thunk's action but it is bad practice
 	return async (dispatch) => {
 		dispatch(fetchDocumentsStart())
 
 		try{
+			console.log('[getState()]', getState());
 			const documents = await Axios.get('/documents.json').then(res=> res.data)
 			dispatch(fetchDocumentsOk(documents))
 		} catch (e) {
