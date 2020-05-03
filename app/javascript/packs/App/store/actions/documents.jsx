@@ -10,7 +10,7 @@ export function fetchDocuments(){
 		dispatch(fetchDocumentsStart())
 
 		try{
-			console.log('[getState()]', getState());
+			// console.log('[getState()]', getState());
 			const documents = await Axios.get('/documents.json').then(res=> res.data)
 			dispatch(fetchDocumentsOk(documents))
 		} catch (e) {
@@ -82,13 +82,13 @@ export function postDocument(doc,formikActions,closeModalFn){
 
 
 
-export function postDocumentStart() {
+function postDocumentStart() {
 	return {
 		type: POST_DOCUMENT_START
 	}
 }
 
-export function postDocumentOk(document, formikActions) {
+function postDocumentOk(document, formikActions) {
 	console.log('[postDocumentOk document]', document);
 
 	formikActions.setSubmitting(false)	
@@ -99,7 +99,7 @@ export function postDocumentOk(document, formikActions) {
 	})	
 }
 
-export function postDocumentError(error, formikActions) {
+function postDocumentError(error, formikActions) {
 	console.log('[postDocumentError error]', error);
 	formikActions.setSubmitting(false)	
 
@@ -114,4 +114,24 @@ export function resetDocuments(){
 	return({
     type: RESET_DOCUMENTS
 	})
-};
+}
+
+
+export function saveNewFace(face, formikActions){
+	dispatch(()=> ({type: SAVE_NEW_FACE_START}))
+	return async (dispatch)=>{
+		try {
+			savedFace = Axios.post(
+				'/faces.json',
+				face
+			)
+			
+			dispatch(()=>({type: SAVE_NEW_FACE_OK, payload: savedFace}))
+
+		} catch (e) {
+			dispatch(()=>({type: SAVE_NEW_FACE_ERROR, payload: e}))
+		}
+		
+	}
+
+}
