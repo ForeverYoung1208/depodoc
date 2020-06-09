@@ -6,15 +6,18 @@ import Input from '../../UI/input'
 import { useDispatch, useSelector } from 'react-redux'
 import { postStateChange } from '../../store/actions/documents'
 import { useParams } from 'react-router-dom'
-import useDocument from '../../hooks/useDocument'
+// import useDocument from '../../hooks/useDocument'
 import DocumentInfo from '../documentInfo'
 import {DOCUMENT_WORKED_OUT_ID} from '../../global_constatns'
+import { getDocument } from '../../store/selectors/getDocument'
 
 export default function NewDocStateForm(props) {
   const {closeModalFn} = props   
   const dispatch = useDispatch()
   const {id:documentId} = useParams() //from router (url)
-  const document = useDocument(documentId)
+  // const document = useDocument(documentId)
+  const document = useSelector( state => getDocument(state, documentId) )
+
   const {docstates} = useSelector( state => state.voc )
   const emptyDocument = {
     id:'', doctype:'', name:'', note:'', face:'', last_docstate:{id:'', name:''}

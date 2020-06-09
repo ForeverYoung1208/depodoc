@@ -1,3 +1,6 @@
+//that's typical selector!!!!
+//TODO: move to selectors!!
+
 import React from 'react'
 import { useSelector } from 'react-redux'
 
