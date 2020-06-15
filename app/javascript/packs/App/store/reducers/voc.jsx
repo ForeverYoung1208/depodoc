@@ -29,11 +29,11 @@ const initialState = {
 export default function vocReducer(state=initialState, action){
   switch (action.type) {
     case FETCH_VOC_OK:
-      let a =  {
-        ...state,
-        ...action.voc,
-      	isLoading: false
-      }
+      // let a =  {
+      //   ...state,
+      //   ...action.voc,
+      // 	isLoading: false
+      // }
       return {
         ...state,
         ...action.voc,

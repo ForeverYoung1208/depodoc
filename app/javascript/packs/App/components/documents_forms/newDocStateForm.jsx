@@ -18,6 +18,7 @@ export default function NewDocStateForm(props) {
   // const document = useDocument(documentId)
   const document = useSelector( state => getDocument(state, documentId) )
 
+
   const {docstates} = useSelector( state => state.voc )
   const emptyDocument = {
     id:'', doctype:'', name:'', note:'', face:'', last_docstate:{id:'', name:''}
