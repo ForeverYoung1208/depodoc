@@ -71,6 +71,7 @@ export function postDocument(doc,formikActions,closeModalFn){
 				'/documents.json', 
 				{document:{...doc}}
 			)
+
 			dispatch(postDocumentOk(savedDocument.data, formikActions));
 			closeModalFn();
 		} catch (e) {
@@ -81,7 +82,6 @@ export function postDocument(doc,formikActions,closeModalFn){
 };
 
 
-
 function postDocumentStart() {
 	return {
 		type: POST_DOCUMENT_START
@@ -89,13 +89,10 @@ function postDocumentStart() {
 }
 
 function postDocumentOk(document, formikActions) {
-	console.log('[postDocumentOk document]', document);
-
 	formikActions.setSubmitting(false)	
-
 	return({
-	type: POST_DOCUMENT_OK,
-	document
+		type: POST_DOCUMENT_OK,
+		documents: [document]
 	})	
 }
 
@@ -104,8 +101,8 @@ function postDocumentError(error, formikActions) {
 	formikActions.setSubmitting(false)	
 
 	return({
-	type: POST_DOCUMENT_ERROR,
-	error
+		type: POST_DOCUMENT_ERROR,
+		error
 	})	
 }
 

@@ -1,19 +1,22 @@
 import {
   RESET_DOCUMENTS,
   FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_ERROR,
-  POST_DOCUMENT_OK, POST_DOCUMENT_START, POST_DOCUMENT_ERROR, SAVE_NEW_FACE_START, SAVE_NEW_FACE_OK, SAVE_NEW_FACE_ERROR
+  POST_DOCUMENT_OK, POST_DOCUMENT_START, POST_DOCUMENT_ERROR, SAVE_NEW_FACE_START, SAVE_NEW_FACE_OK, SAVE_NEW_FACE_ERROR,
+  actionsTypes
 } from '../actions/actionTypes';
 
 
 const initialState = {
-	documents: [],
+	documents: [] as Array<documentType>,
   isLoading: false,
-  fetchErrorText: null
+  fetchErrorText: null as string
 }
 
 
-export default function documentsReducer(state=initialState, action) {
-
+export default function documentsReducer(
+    state=initialState, 
+    action: { type: actionsTypes; documents: Array<documentType>; error: { message: string; }}
+  ):documentsStateType {
   switch (action.type) {
     case FETCH_DOCUMENTS_START:
       return {
@@ -34,7 +37,6 @@ export default function documentsReducer(state=initialState, action) {
         isLoading: false,
         fetchErrorText: action.error.message
       };
-
     case POST_DOCUMENT_START:
       return{
         ...state,
@@ -44,7 +46,7 @@ export default function documentsReducer(state=initialState, action) {
       return{
         ...state,
         isLoading: false,
-        documents: [...state.documents, action.document ]
+        documents: [...state.documents, ...action.documents ]
       }
     case POST_DOCUMENT_ERROR:
       return{
@@ -52,7 +54,6 @@ export default function documentsReducer(state=initialState, action) {
         isLoading:false,
         fetchErrorText: action.error.message
       }
-
       case RESET_DOCUMENTS:
       return {
       	...state,
@@ -62,21 +63,37 @@ export default function documentsReducer(state=initialState, action) {
     case SAVE_NEW_FACE_START:
       return {
         ...state,
-        is_loading:true
+        isLoading:true
       };
     case SAVE_NEW_FACE_OK:
       return {
+        ...state,
+        //TODO
         //...
       };
     case SAVE_NEW_FACE_ERROR:
       return {
+        ...state,
+        //TODO
         //...
-      };
-    
-
-    
+    };
 
     default:
 	    return state
   }
+}
+
+export type documentsStateType = typeof initialState;
+export interface documentType{
+  companies?: [];
+  created_at: string;
+  creator_name: string;
+  doctype: string;
+  face: {id: number, name: string};
+  id: number;
+  last_docstate: {id: number, name: string, possible_changes: Array<number>}
+  name: string;
+  note: string;
+  operations: Array<number>;
+  updated_at: string;
 }
