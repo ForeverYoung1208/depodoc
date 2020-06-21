@@ -39,7 +39,7 @@ export default function NewDocStateForm(props) {
       onSubmit={(values, actions) => {
         
 
-        dispatch(postStateChange(values.document.id, +document.last_docstate.id, +values.newState_id, values.note, actions, closeModalFn))
+        dispatch(postStateChange(+values.document.id, +document.last_docstate.id, +values.newState_id, values.note, actions, closeModalFn))
       }}
     >
       { ({isSubmitting, handleChange, values}) => (

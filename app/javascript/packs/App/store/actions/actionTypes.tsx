@@ -12,7 +12,7 @@ export const FETCH_VOC_OK = 'voc/FETCH_VOC_OK'
 export const FETCH_VOC_START = 'voc/FETCH_VOC_START'
 export const FETCH_VOC_ERROR = 'voc/FETCH_VOC_ERROR'
 
-export type actionsTypes = 
+export type actionsTypesType = 
 typeof FETCH_DOCUMENTS_OK |
 typeof FETCH_DOCUMENTS_START |
 typeof FETCH_DOCUMENTS_ERROR |
