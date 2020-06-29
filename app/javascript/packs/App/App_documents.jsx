@@ -8,19 +8,12 @@ import {Provider} from 'react-redux'
 import rootReducer from './store/reducers/rootReducer'
 import thunk from 'redux-thunk'
 
-//import Documents from './pages/documents'
-
-
 ReactModal.setAppElement('#documents-app')
 
-// const routes = useMainRoutes()
-
 const composeEnhancers =
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-    }) : compose;
-
+  typeof window === 'object' &&  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) 
+    : compose;
 
 const store = createStore(
   rootReducer,

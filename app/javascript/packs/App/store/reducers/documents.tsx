@@ -1,24 +1,10 @@
 import {
   RESET_DOCUMENTS,
   FETCH_DOCUMENTS_OK, FETCH_DOCUMENTS_START, FETCH_DOCUMENTS_ERROR,
-  POST_DOCUMENT_OK, POST_DOCUMENT_START, POST_DOCUMENT_ERROR, SAVE_NEW_FACE_START, SAVE_NEW_FACE_OK, SAVE_NEW_FACE_ERROR,
+  POST_DOCUMENT_OK, POST_DOCUMENT_START, POST_DOCUMENT_ERROR,
   actionsTypesType
 } from '../actions/actionTypes';
-
-
-export interface documentType{
-  companies?: [];
-  created_at: string;
-  creator_name: string;
-  doctype: string;
-  face: {id: number, name: string};
-  id: number;
-  last_docstate: {id: number, name: string, possible_changes: Array<number>}
-  name: string;
-  note: string;
-  operations: Array<number>;
-  updated_at: string;
-}
+import { documentType, errorType } from '../types/types';
 
 const initialState = {
 	documents: [] as Array<documentType>,
@@ -29,7 +15,7 @@ export type documentsStateType = typeof initialState;
 
 export default function documentsReducer(
     state: documentsStateType = initialState, 
-    action: { type: actionsTypesType; documents: Array<documentType>; error: { message: string; }}
+    action: { type: actionsTypesType; documents: Array<documentType>; error:errorType}
   ):documentsStateType {
   switch (action.type) {
     case FETCH_DOCUMENTS_START:
@@ -68,30 +54,11 @@ export default function documentsReducer(
         isLoading:false,
         fetchErrorText: action.error.message
       }
-      case RESET_DOCUMENTS:
+    case RESET_DOCUMENTS:
       return {
       	...state,
       	documents: []
-      };
-
-    case SAVE_NEW_FACE_START:
-      return {
-        ...state,
-        isLoading:true
-      };
-    case SAVE_NEW_FACE_OK:
-      return {
-        ...state,
-        //TODO
-        //...
-      };
-    case SAVE_NEW_FACE_ERROR:
-      return {
-        ...state,
-        //TODO
-        //...
-    };
-
+      }
     default:
 	    return state
   }
